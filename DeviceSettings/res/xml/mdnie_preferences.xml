@@ -29,7 +29,7 @@
 	        android:summary="@string/mdnie_mode_summary_head"
 	        android:entries="@array/mdnie_mode_entries"
   			android:entryValues="@array/mdnie_mode_entries_values"
-  			android:defaultValue="1" />
+			android:defaultValue="4" />
 
     <!-- mDNIe Outdoor mode -->
     <com.cyanogenmod.settings.device.mDNIeOutdoor
@@ -52,6 +52,6 @@
             android:summary="@string/panel_color_temp_summary_head"
             android:entries="@array/panel_color_temp_entries"
             android:entryValues="@array/panel_color_temp_entries_values"
-            android:defaultValue="1"/>
+            android:defaultValue="2"/>
     </PreferenceCategory>
 </PreferenceScreen>
