@@ -30,6 +30,10 @@
     <string name="panel_gamma_summary_head">Imposta il valore gamma dello schermo</string>
     <string name="panel_color_temp_title_head">Temperatura colore dello schermo</string>
     <string name="panel_color_temp_summary_head">Spegnere e riaccendere lo schermo per attivare le modifiche</string>
+    <string name="category_sensors_title">Sensori</string>
+    <string name="touchkey_subcat_title">Tasti a sfioramento</string>
+    <string name="touchkey_light_title_head">Retroilluminazione</string>
+    <string name="touchkey_light_summary_head">Abilita la retroilluminazione dei tasti a sfioramento quando lo schermo è attivo</string>
     <string name="cabc_title_head">CABC</string>
     <string name="cabc_summary_head">Luminosità automatica a seconda dei contenuti dello schermo (CABC)</string>
     <string name="category_sound_title">Suono</string>

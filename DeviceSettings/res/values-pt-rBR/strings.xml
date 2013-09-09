@@ -28,6 +28,12 @@
     <string name="mdnie_outdoor_summary_head">Ativar/Desativar modo ao ar livre</string>
     <string name="panel_gamma_title_head">Gamma da tela</string>
     <string name="panel_gamma_summary_head">Definir o valor da gamma da tela</string>
+    <string name="panel_color_temp_title_head">Temperatura das cores da tela</string>
+    <string name="panel_color_temp_summary_head">Ligue e desligue a tela para ativar</string>
+    <string name="category_sensors_title">Sensores</string>
+    <string name="touchkey_subcat_title">Botões capacitivos</string>
+    <string name="touchkey_light_title_head">Ativar luz de fundo dos botões</string>
+    <string name="touchkey_light_summary_head">Acender os botões capacitivos quando a tela estiver ligada</string>
     <string name="cabc_title_head">CCLA</string>
     <string name="cabc_summary_head">Ativar conteúdo do controle de luz de fundo adaptativo</string>
     <string name="category_sound_title">Som</string>

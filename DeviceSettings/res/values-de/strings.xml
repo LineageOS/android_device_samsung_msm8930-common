@@ -27,4 +27,8 @@
     <string name="mdnie_outdoor_summary_head">Aktiviert/Deaktiviert den Outdoor Modus</string>
     <string name="panel_gamma_title_head">Gamma Einstellung</string>
     <string name="panel_gamma_summary_head">Setzt den Gamma Wert</string>
+    <string name="category_sensors_title">Sensoren</string>
+    <string name="touchkey_subcat_title">Touch-Tasten</string>
+    <string name="touchkey_light_title_head">Aktiviere Tastenbeleuchtung</string>
+    <string name="touchkey_light_summary_head">Tasten leuchten auf während der Birdschirm aktiv ist</string>
 </resources>

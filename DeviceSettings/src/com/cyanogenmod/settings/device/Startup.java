@@ -29,7 +29,9 @@ public class Startup extends BroadcastReceiver {
         mDNIeOutdoor.restore(context);
         mDNIeNegative.restore(context);
         CABC.restore(context);
+        SensorsFragmentActivity.restore(context);
         SoundFragmentActivity.restore(context);
         PanelColorTemperature.restore(context);
     }
+
 }

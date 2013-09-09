@@ -48,9 +48,6 @@ public class mDNIeFragmentActivity extends PreferenceFragment {
         }
 
         mmDNIeOutdoor = (mDNIeOutdoor) findPreference(DeviceSettings.KEY_MDNIE_OUTDOOR);
-        if (!mDNIeOutdoor.isSupported()) {
-            prefs.removePreference(mmDNIeOutdoor);
-        }
 
         mmDNIeNegative = (mDNIeNegative) findPreference(DeviceSettings.KEY_MDNIE_NEGATIVE);
         if (!mDNIeNegative.isSupported()) {

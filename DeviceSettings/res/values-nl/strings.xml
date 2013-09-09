@@ -30,6 +30,10 @@
     <string name="panel_gamma_summary_head">Schermgammawaarden instellen</string>
     <string name="panel_color_temp_title_head">Schermkleurtemperatuur</string>
     <string name="panel_color_temp_summary_head">Om toe te passen, dient het scherm te worden uit- en aangezet</string>
+    <string name="category_sensors_title">Sensoren</string>
+    <string name="touchkey_subcat_title">Aanraakknoppen</string>
+    <string name="touchkey_light_title_head">Verlichting</string>
+    <string name="touchkey_light_summary_head">Aanraakknoppen oplichten indien scherm aan is</string>
     <string name="cabc_title_head">Inhoud (CABC)</string>
     <string name="cabc_summary_head">Inhoudsafhankelijke achtergrondverlichting inschakelen</string>
     <string name="category_sound_title">Geluid</string>

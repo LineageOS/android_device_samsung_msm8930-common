@@ -27,4 +27,8 @@
     <string name="mdnie_outdoor_summary_head">Ota ulkoilma-tila käyttöön</string>
     <string name="panel_gamma_title_head">Näytön gamma</string>
     <string name="panel_gamma_summary_head">Säädä näytön gamma-arvo</string>
+    <string name="category_sensors_title">Sensorit</string>
+    <string name="touchkey_subcat_title">Kosketusnäppäin</string>
+    <string name="touchkey_light_title_head">Ota näppäinvalot käyttöön</string>
+    <string name="touchkey_light_summary_head">Valot syttyvät kun näyttö on päällä</string>
 </resources>

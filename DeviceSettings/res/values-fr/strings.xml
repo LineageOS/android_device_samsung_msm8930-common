@@ -30,6 +30,10 @@
     <string name="panel_gamma_summary_head">Définir la valeur de gamma de l\'écran</string>
     <string name="panel_color_temp_title_head">Température de la couleur de l\'écran</string>
     <string name="panel_color_temp_summary_head">Éteindre et rallumer l\'écran pour activer</string>
+    <string name="category_sensors_title">Capteurs</string>
+    <string name="touchkey_subcat_title">Touches tactiles</string>
+    <string name="touchkey_light_title_head">Rétroéclairage</string>
+    <string name="touchkey_light_summary_head">Activer le rétroéclairage des touches tactiles lorsque l\'écran est activé</string>
     <string name="cabc_title_head">CABC</string>
     <string name="cabc_summary_head">Activer le contrôle adaptatif du rétroéclairage</string>
     <string name="category_sound_title">Son</string>

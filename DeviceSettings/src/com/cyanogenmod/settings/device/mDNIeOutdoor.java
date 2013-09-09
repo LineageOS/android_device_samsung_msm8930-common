@@ -34,20 +34,11 @@ public class mDNIeOutdoor extends CheckBoxPreference implements OnPreferenceChan
 
     private static final String FILE = "/sys/class/mdnie/mdnie/outdoor";
 
-    public static boolean isSupported() {
-        // D2 doesn't actually support outdoor mode
-        return Utils.fileExists(FILE) && !Build.DEVICE.startsWith("d2");
-    }
-
     /**
      * Restore mdnie outdoor mode setting from SharedPreferences. (Write to kernel.)
      * @param context       The context to read the SharedPreferences from
      */
     public static void restore(Context context) {
-        if (!isSupported()) {
-            return;
-        }
-
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
         Utils.writeValue(FILE, sharedPrefs.getBoolean(DeviceSettings.KEY_MDNIE_OUTDOOR, false) ? "1" : "0");
     }

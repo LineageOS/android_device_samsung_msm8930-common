@@ -30,6 +30,10 @@
     <string name="panel_gamma_summary_head">设定屏幕伽玛值</string>
     <string name="panel_color_temp_title_head">屏幕色温</string>
     <string name="panel_color_temp_summary_head">屏幕关闭再开启后将应用</string>
+    <string name="category_sensors_title">传感器</string>
+    <string name="touchkey_subcat_title">触摸键</string>
+    <string name="touchkey_light_title_head">启用按键背光灯</string>
+    <string name="touchkey_light_summary_head">在屏幕开启状态下点亮触摸键</string>
     <string name="cabc_title_head">CABC</string>
     <string name="cabc_summary_head">启用动态背光控制</string>
     <string name="category_sound_title">声音</string>

@@ -36,7 +36,7 @@ public class SoundFragmentActivity extends PreferenceFragment {
     private static final String CATEGORY_VOLUME   = "volume";
     private static final String KEY_VOC_EP_XGAIN  = "voc_ep_xgain";
     private static final String PROP_VOC_EP_XGAIN = "persist.audio.voc_ep.xgain";
-    private static final String TAG = "GalaxyS3Parts_General";
+    private static final String TAG = "S4MiniSettings_General";
 
     private CheckBoxPreference mVocEpXgain;
 

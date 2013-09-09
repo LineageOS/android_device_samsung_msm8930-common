@@ -30,6 +30,10 @@
     <string name="panel_gamma_summary_head">Nastavit hodnotu gamma pro obrazovku</string>
     <string name="panel_color_temp_title_head">Barevné podání obrazovky</string>
     <string name="panel_color_temp_summary_head">Pro aktivaci funkce je potřeba obrazovku vypnout a zapnout</string>
+    <string name="category_sensors_title">Senzory</string>
+    <string name="touchkey_subcat_title">Dotyková tlačítka</string>
+    <string name="touchkey_light_title_head">Povolit podsvícení tlačítek</string>
+    <string name="touchkey_light_summary_head">Rozsvítit podsvícení tlačítek při zapnuté obrazovce</string>
     <string name="cabc_title_head">CABC</string>
     <string name="cabc_summary_head">Povolit adaptivní přizpůsobení podsvícení podle obsahu</string>
     <string name="category_sound_title">Zvuk</string>
