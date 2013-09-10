@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a0c5dc1_ca1623a7",
+        "filename": "DeviceSettings/res/values-de/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2013-09-10T22:25:38Z",
+      "side": 1,
+      "message": "It\u0027s \u0027Erweiterte\u0027, not \u0027erweiterte\u0027. You probably also want to grab the string improvements done in https://github.com/CyanogenMod/android_device_samsung_i9100/commit/1a26608f21f4ae82e2152e385202a9b2bc02c787",
+      "revId": "73aa83b0467349f00f82664b01f12a28eb7c8f3c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
