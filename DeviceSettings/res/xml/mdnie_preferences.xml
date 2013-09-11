@@ -6,13 +6,6 @@
             android:key="mdnie"
             android:title="@string/screen_colors_title">
 
-    <!-- CABC -->
-    <com.cyanogenmod.settings.device.CABC
-            android:key="cabc"
-            android:title="@string/cabc_title_head"
-            android:summary="@string/cabc_summary_head"
-            android:defaultValue="true" />
-
     <!-- mDNIe Scenario modes -->
     <com.cyanogenmod.settings.device.mDNIeScenario
 	        android:key="mdnie_scenario"

@@ -34,8 +34,6 @@
     <string name="touchkey_subcat_title">Dotyková tlačítka</string>
     <string name="touchkey_light_title_head">Povolit podsvícení tlačítek</string>
     <string name="touchkey_light_summary_head">Rozsvítit podsvícení tlačítek při zapnuté obrazovce</string>
-    <string name="cabc_title_head">CABC</string>
-    <string name="cabc_summary_head">Povolit adaptivní přizpůsobení podsvícení podle obsahu</string>
     <string name="category_sound_title">Zvuk</string>
     <string name="sound_volume_title">Hlasitost</string>
     <string name="voc_ep_xgain_title_head">Zesílení při telefonních hovorech</string>

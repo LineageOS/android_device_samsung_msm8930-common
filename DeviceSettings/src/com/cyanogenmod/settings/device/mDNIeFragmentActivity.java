@@ -26,7 +26,6 @@ public class mDNIeFragmentActivity extends PreferenceFragment {
     private mDNIeMode mmDNIeMode;
     private mDNIeOutdoor mmDNIeOutdoor;
     private mDNIeNegative mmDNIeNegative;
-    private CABC mCABC;
     private PanelColorTemperature mPanelColor;
 
     @Override
@@ -52,11 +51,6 @@ public class mDNIeFragmentActivity extends PreferenceFragment {
         mmDNIeNegative = (mDNIeNegative) findPreference(DeviceSettings.KEY_MDNIE_NEGATIVE);
         if (!mDNIeNegative.isSupported()) {
             prefs.removePreference(mmDNIeNegative);
-        }
-
-        mCABC = (CABC) findPreference(DeviceSettings.KEY_CABC);
-        if (!CABC.isSupported()) {
-            prefs.removePreference(mCABC);
         }
 
         mPanelColor = (PanelColorTemperature) findPreference(DeviceSettings.KEY_PANEL_COLOR_TEMPERATURE);

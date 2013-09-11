@@ -34,8 +34,6 @@
     <string name="touchkey_subcat_title">Touches tactiles</string>
     <string name="touchkey_light_title_head">Rétroéclairage</string>
     <string name="touchkey_light_summary_head">Activer le rétroéclairage des touches tactiles lorsque l\'écran est activé</string>
-    <string name="cabc_title_head">CABC</string>
-    <string name="cabc_summary_head">Activer le contrôle adaptatif du rétroéclairage</string>
     <string name="category_sound_title">Son</string>
     <string name="sound_volume_title">Volume</string>
     <string name="voc_ep_xgain_title_head">Augmentation du volume des appels</string>
