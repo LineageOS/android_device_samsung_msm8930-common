@@ -12,34 +12,26 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# inherit from qcom-common
+-include device/samsung/qcom-common/BoardConfigCommon.mk
+
 BOARD_VENDOR := samsung
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8960
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
-TARGET_ARCH_VARIANT_CPU := cortex-a9
-
-# inherit from qcom-common
--include device/samsung/qcom-common/BoardConfigCommon.mk
+TARGET_CPU_VARIANT := krait
 
 # Architecture
 TARGET_CPU_SMP := true
 
 # QCOM flags
-COMMON_GLOBAL_CFLAGS += -DNEW_ION_API -DLPA_DEFAULT_BUFFER_SIZE=32
+COMMON_GLOBAL_CFLAGS += -DLPA_DEFAULT_BUFFER_SIZE=32
 
 # Flags for Krait CPU
 COMMON_GLOBAL_CFLAGS += -D__ARM_USE_PLD -D__ARM_CACHE_LINE_SIZE=64
 TARGET_GLOBAL_CFLAGS += -mfpu=neon-vfpv4 -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mfpu=neon-vfpv4 -mfloat-abi=softfp
-
-# Krait optimizations
-TARGET_USE_KRAIT_BIONIC_OPTIMIZATION := true
-TARGET_USE_KRAIT_PLD_SET := true
-TARGET_KRAIT_BIONIC_PLDOFFS := 10
-TARGET_KRAIT_BIONIC_PLDTHRESH := 10
-TARGET_KRAIT_BIONIC_BBTHRESH := 64
-TARGET_KRAIT_BIONIC_PLDSIZE := 64
 
 # Adreno configuration
 BOARD_EGL_CFG := device/samsung/msm8930-common/configs/egl.cfg
@@ -79,8 +71,14 @@ BOARD_USES_FLUENCE_INCALL := true
 BOARD_USES_SEPERATED_AUDIO_INPUT := true
 TARGET_USES_QCOM_COMPRESSED_AUDIO := true
 
+# QCOM enhanced A/V
+TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
+
 # We have the new GPS driver
 #BOARD_HAVE_NEW_QC_GPS := true
 
 # Use CAF media driver variant for 8930
 TARGET_QCOM_MEDIA_VARIANT := caf
+
+# Use retire fence from MDP driver
+TARGET_DISPLAY_USE_RETIRE_FENCE := true
