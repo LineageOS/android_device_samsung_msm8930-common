@@ -27,6 +27,7 @@ TARGET_CPU_SMP := true
 
 # QCOM flags
 COMMON_GLOBAL_CFLAGS += -DLPA_DEFAULT_BUFFER_SIZE=32
+COMMON_GLOBAL_CFLAGS += -DQCOM_BSP
 
 # Flags for Krait CPU
 COMMON_GLOBAL_CFLAGS += -D__ARM_USE_PLD -D__ARM_CACHE_LINE_SIZE=64
@@ -86,3 +87,6 @@ TARGET_DISPLAY_USE_RETIRE_FENCE := true
 
 # We have our own camera HAL
 USE_DEVICE_SPECIFIC_CAMERA := true
+
+# Needed for full compatibility with new adreno drivers
+TARGET_USES_QCOM_BSP := true
