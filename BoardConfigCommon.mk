@@ -25,10 +25,6 @@ TARGET_CPU_VARIANT := krait
 # Architecture
 TARGET_CPU_SMP := true
 
-# QCOM flags
-COMMON_GLOBAL_CFLAGS += -DLPA_DEFAULT_BUFFER_SIZE=32
-COMMON_GLOBAL_CFLAGS += -DQCOM_BSP
-
 # Flags for Krait CPU
 COMMON_GLOBAL_CFLAGS += -D__ARM_USE_PLD -D__ARM_CACHE_LINE_SIZE=64
 TARGET_GLOBAL_CFLAGS += -mfpu=neon-vfpv4 -mfloat-abi=softfp
@@ -51,6 +47,11 @@ WIFI_DRIVER_MODULE_NAME          := "wlan"
 WIFI_DRIVER_FW_PATH_STA          := "sta"
 WIFI_DRIVER_FW_PATH_AP           := "ap"
 
+# QCOM
+BOARD_USES_QCOM_HARDWARE := true
+TARGET_USES_QCOM_BSP := true
+COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DQCOM_BSP
+
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
@@ -59,9 +60,6 @@ BOARD_HAVE_BLUETOOTH_QCOM := true
 BOARD_VOLD_MAX_PARTITIONS := 24
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
 
-# Camera
-COMMON_GLOBAL_CFLAGS += -DSAMSUNG_CAMERA_HARDWARE
-
 # Workaround to avoid issues with legacy liblights on QCOM platforms
 TARGET_PROVIDES_LIBLIGHT := true
 
@@ -69,12 +67,10 @@ TARGET_PROVIDES_LIBLIGHT := true
 BOARD_USES_ALSA_AUDIO := true
 BOARD_USES_FLUENCE_INCALL := true
 BOARD_USES_SEPERATED_AUDIO_INPUT := true
+COMMON_GLOBAL_CFLAGS += -DLPA_DEFAULT_BUFFER_SIZE=32
 
 # QCOM enhanced A/V
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
-
-# We have the new GPS driver
-#BOARD_HAVE_NEW_QC_GPS := true
 
 # Use CAF media driver variant for 8930
 TARGET_QCOM_MEDIA_VARIANT := caf
@@ -82,8 +78,6 @@ TARGET_QCOM_MEDIA_VARIANT := caf
 # Use retire fence from MDP driver
 TARGET_DISPLAY_USE_RETIRE_FENCE := true
 
-# We have our own camera HAL
+# Camera
 USE_DEVICE_SPECIFIC_CAMERA := true
-
-# Needed for full compatibility with new adreno drivers
-TARGET_USES_QCOM_BSP := true
+COMMON_GLOBAL_CFLAGS += -DSAMSUNG_CAMERA_HARDWARE
