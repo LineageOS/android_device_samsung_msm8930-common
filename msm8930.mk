@@ -52,6 +52,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     camera.msm8960
 
+# Thermal profiles
+PRODUCT_PACKAGES += \
+    thermald-8930ab.conf \
+    thermald-8930.conf
+
 # Misc
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
