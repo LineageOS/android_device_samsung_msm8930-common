@@ -48,6 +48,10 @@ PRODUCT_PACKAGES += \
     memtrack.msm8960 \
     power.msm8960
 
+# Camera Wrapper
+PRODUCT_PACKAGES += \
+    camera.msm8960
+
 # Misc
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
