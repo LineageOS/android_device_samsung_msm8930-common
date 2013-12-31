@@ -185,8 +185,10 @@ char * camera_fixup_setparams(struct camera_device * device, const char * settin
 #endif
 #endif
 
+#ifdef SAMSUNG_CAMERA_MODE
     /* Samsung camcorder mode */
     params.set(KEY_SAMSUNG_CAMERA_MODE, isVideo ? "1" : "0");
+#endif
 #ifdef ENABLE_ZSL
     params.set(android::CameraParameters::KEY_ZSL, isVideo ? "off" : "on");
     params.set(android::CameraParameters::KEY_CAMERA_MODE, isVideo ? "0" : "1");
