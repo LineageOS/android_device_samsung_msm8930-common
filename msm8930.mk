@@ -45,10 +45,6 @@ PRODUCT_PACKAGES += \
     hwcomposer.msm8960 \
     power.msm8960
 
-# Device settings
-PRODUCT_PACKAGES += \
-    S4MiniSettings
-
 # Misc
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
