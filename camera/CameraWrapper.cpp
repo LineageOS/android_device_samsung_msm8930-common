@@ -116,10 +116,11 @@ static char * camera_fixup_getparams(int id, const char * settings)
 
 #ifdef PREVIEW_SIZE_FIXUP
         params.set(android::CameraParameters::KEY_PREFERRED_PREVIEW_SIZE_FOR_VIDEO, "1280x720");
+#endif
+
     if(id == 1) {
         params.set(android::CameraParameters::KEY_SUPPORTED_PICTURE_SIZES, "1392x1392,1280x720,640x480");
     }
-#endif
 
 #ifdef DISABLE_FACE_DETECTION
 #ifndef DISABLE_FACE_DETECTION_BOTH_CAMERAS
@@ -168,10 +169,11 @@ char * camera_fixup_setparams(struct camera_device * device, const char * settin
 
 #ifdef PREVIEW_SIZE_FIXUP
         params.set(android::CameraParameters::KEY_PREFERRED_PREVIEW_SIZE_FOR_VIDEO, "1280x720");
+#endif
+
     if(id == 1) {
         params.set(android::CameraParameters::KEY_SUPPORTED_PICTURE_SIZES, "1392x1392,1280x720,640x480");
     }
-#endif
 
 #ifdef DISABLE_FACE_DETECTION
 #ifndef DISABLE_FACE_DETECTION_BOTH_CAMERAS
