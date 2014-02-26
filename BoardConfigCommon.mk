@@ -19,7 +19,6 @@ BOARD_VENDOR := samsung
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8960
-TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
 TARGET_CPU_VARIANT := krait
 
 # Architecture
