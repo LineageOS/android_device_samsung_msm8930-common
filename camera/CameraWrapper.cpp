@@ -131,6 +131,8 @@ static char * camera_fixup_getparams(int id, const char * settings)
 #endif
         params.set(android::CameraParameters::KEY_MAX_NUM_DETECTED_FACES_HW, "0");
         params.set(android::CameraParameters::KEY_MAX_NUM_DETECTED_FACES_SW, "0");
+        params.set(android::CameraParameters::KEY_FACE_DETECTION, "off");
+        params.set(android::CameraParameters::KEY_SUPPORTED_FACE_DETECTION, "off");
 #ifndef DISABLE_FACE_DETECTION_BOTH_CAMERAS
     }
 #endif
@@ -186,6 +188,8 @@ char * camera_fixup_setparams(struct camera_device * device, const char * settin
 #endif
         params.set(android::CameraParameters::KEY_MAX_NUM_DETECTED_FACES_HW, "0");
         params.set(android::CameraParameters::KEY_MAX_NUM_DETECTED_FACES_SW, "0");
+        params.set(android::CameraParameters::KEY_FACE_DETECTION, "off");
+        params.set(android::CameraParameters::KEY_SUPPORTED_FACE_DETECTION, "off");
 #ifndef DISABLE_FACE_DETECTION_BOTH_CAMERAS
     }
 #endif
