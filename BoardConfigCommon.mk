@@ -57,9 +57,6 @@ BOARD_HAVE_BLUETOOTH_QCOM := true
 BOARD_VOLD_MAX_PARTITIONS := 24
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
 
-# Camera
-COMMON_GLOBAL_CFLAGS += -DSAMSUNG_CAMERA_HARDWARE
-
 # Workaround to avoid issues with legacy liblights on QCOM platforms
 TARGET_PROVIDES_LIBLIGHT := true
 
@@ -83,3 +80,7 @@ TARGET_DISPLAY_USE_RETIRE_FENCE := true
 
 # Needed for full compatibility with new adreno drivers
 TARGET_USES_QCOM_BSP := true
+
+# Camera
+TARGET_PROVIDES_CAMERA_HAL := true
+COMMON_GLOBAL_CFLAGS += -DSAMSUNG_CAMERA_HARDWARE
