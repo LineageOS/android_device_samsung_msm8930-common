@@ -32,6 +32,7 @@ TARGET_GLOBAL_CPPFLAGS += -mfpu=neon-vfpv4 -mfloat-abi=softfp
 BOARD_EGL_CFG := device/samsung/msm8930-common/configs/egl.cfg
 
 # Wifi driver
+TARGET_USES_WCNSS_CTRL           := true
 BOARD_HAS_QCOM_WLAN              := true
 BOARD_HAS_QCOM_WLAN_SDK          := true
 BOARD_WLAN_DEVICE                := qcwcn

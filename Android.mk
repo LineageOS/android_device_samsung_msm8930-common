@@ -26,6 +26,11 @@ ifeq ($(BOARD_VENDOR),samsung)
 ifeq ($(TARGET_BOARD_PLATFORM),msm8960)
 ifneq ($(filter lt02ltespr melius3gxx serranoltebmc meliusltexx serrano3gxx serranodsdd serranodsub serranoltespr serranoltexx,$(TARGET_DEVICE)),)
 include $(call all-subdir-makefiles,$(LOCAL_PATH))
+
+$(shell mkdir -p $(TARGET_OUT_ETC)/firmware/wlan/prima; \
+	ln -sf /data/misc/wifi/WCNSS_qcom_cfg.ini \
+	$(TARGET_OUT_ETC)/firmware/wlan/prima/WCNSS_qcom_cfg.ini)
+
 endif
 endif
 endif
