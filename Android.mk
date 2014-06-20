@@ -24,7 +24,9 @@ LOCAL_PATH := $(call my-dir)
 
 ifeq ($(BOARD_VENDOR),samsung)
 ifeq ($(TARGET_BOARD_PLATFORM),msm8960)
-ifneq ($(filter lt02ltespr melius3gxx serranoltebmc meliusltexx serrano3gxx serranodsdd serranodsub serranoltespr serranoltexx wilcoxltexx,$(TARGET_DEVICE)),)
+ifneq ($(filter expressltexx lt02ltespr melius3gxx meliusltexx serrano3gxx \
+                serranodsdd serranodsub serranoltebmc serranoltexx \
+                serranoltespr wilcoxltexx,$(TARGET_DEVICE)),)
 include $(call all-subdir-makefiles,$(LOCAL_PATH))
 
 $(shell mkdir -p $(TARGET_OUT_ETC)/firmware/wlan/prima; \
