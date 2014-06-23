@@ -57,7 +57,7 @@ camera_module_t HAL_MODULE_INFO_SYM = {
          .version_major = 1,
          .version_minor = 0,
          .id = CAMERA_HARDWARE_MODULE_ID,
-         .name = "msm8930-common Camera Wrapper",
+         .name = "Samsung msm8930 Camera Wrapper",
          .author = "The CyanogenMod Project",
          .methods = &camera_module_methods,
          .dso = NULL, /* remove compilation warnings */
@@ -97,6 +97,9 @@ static int check_vendor_module()
 }
 
 const static char * iso_values[] = {"auto,"
+#ifdef ISO_MODE_50
+"ISO50,"
+#endif
 #ifdef ISO_MODE_HJR
 "ISO_HJR,"
 #endif
@@ -113,11 +116,12 @@ static char * camera_fixup_getparams(int id, const char * settings)
 
     // fix params here
     params.set(android::CameraParameters::KEY_SUPPORTED_ISO_MODES, iso_values[id]);
-
 #ifdef PREVIEW_SIZE_FIXUP
-        params.set(android::CameraParameters::KEY_PREFERRED_PREVIEW_SIZE_FOR_VIDEO, "1280x720");
+    params.set(android::CameraParameters::KEY_PREFERRED_PREVIEW_SIZE_FOR_VIDEO, id ? "640x480" : "800x480");
 #endif
-
+#ifdef VIDEO_PREVIEW_ALWAYS_MAX
+    params.set(android::CameraParameters::KEY_PREFERRED_PREVIEW_SIZE_FOR_VIDEO, "1280x720");
+#endif
 #ifdef FFC_PICTURE_FIXUP
     if(id == 1) {
         params.set(android::CameraParameters::KEY_SUPPORTED_PICTURE_SIZES, "1392x1392,1280x720,640x480");
@@ -145,6 +149,8 @@ static char * camera_fixup_getparams(int id, const char * settings)
     return ret;
 }
 
+static bool wasVideo = false;
+
 char * camera_fixup_setparams(struct camera_device * device, const char * settings)
 {
     int id = CAMERA_ID(device);
@@ -169,11 +175,9 @@ char * camera_fixup_setparams(struct camera_device * device, const char * settin
             params.set(android::CameraParameters::KEY_ISO_MODE, "800");
         else if(strcmp(isoMode, "ISO1600") == 0)
             params.set(android::CameraParameters::KEY_ISO_MODE, "1600");
+        else if(strcmp(isoMode, "ISO50") == 0)
+            params.set(android::CameraParameters::KEY_ISO_MODE, "50");
     }
-
-#ifdef PREVIEW_SIZE_FIXUP
-        params.set(android::CameraParameters::KEY_PREFERRED_PREVIEW_SIZE_FOR_VIDEO, "1280x720");
-#endif
 
 #ifdef FFC_PICTURE_FIXUP
     if(id == 1) {
@@ -197,7 +201,25 @@ char * camera_fixup_setparams(struct camera_device * device, const char * settin
 
 #ifdef SAMSUNG_CAMERA_MODE
     /* Samsung camcorder mode */
-    params.set(KEY_SAMSUNG_CAMERA_MODE, isVideo ? "1" : "0");
+    if (id == 1) {
+    /* Enable for front camera only */
+        if (!(!strcmp(camMode, "1") && !isVideo) || wasVideo) {
+        /* Enable only if not already set (Snapchat) but do enable if the setting is left
+        over while switching from stills to video */
+            if ((!strcmp(params.get(android::CameraParameters::KEY_PREVIEW_FRAME_RATE), "15") ||
+               (!strcmp(params.get(android::CameraParameters::KEY_PREVIEW_SIZE), "320x240") &&
+               !strcmp(params.get(android::CameraParameters::KEY_JPEG_QUALITY), "96"))) && !isVideo) {
+                /* Do not set for video chat in Hangouts (Frame rate 15) or Skype (Preview size 320x240
+                and jpeg quality 96 */
+            } else {
+            /* "Normal case". Required to prevent distorted video and reboots while taking snaps */
+            params.set(KEY_SAMSUNG_CAMERA_MODE, isVideo ? "1" : "0");
+            }
+            wasVideo = (isVideo || wasVideo);
+        }
+    } else {
+    wasVideo = false;
+    }
 #endif
 #ifdef ENABLE_ZSL
     params.set(android::CameraParameters::KEY_ZSL, "on");
@@ -208,6 +230,7 @@ char * camera_fixup_setparams(struct camera_device * device, const char * settin
     }
 #endif
 #endif
+
     android::String8 strParams = params.flatten();
 
     if (fixed_set_params[id])
@@ -387,19 +410,23 @@ int camera_auto_focus(struct camera_device * device)
 
 int camera_cancel_auto_focus(struct camera_device * device)
 {
+    int ret = 0;
+
     ALOGV("%s", __FUNCTION__);
     ALOGV("%s->%08X->%08X", __FUNCTION__, (uintptr_t)device, (uintptr_t)(((wrapper_camera_device_t*)device)->vendor));
 
     if(!device)
         return -EINVAL;
 
-    /* APEXQ/D2/EXPRESS: Calling cancel_auto_focus causes the camera to crash for unknown reasons. Disabling
-     * it has no adverse effect. Return 0 */
-#ifdef DISABLE_AUTOFOCUS
-    return 0;
-#else
-    return VENDOR_CALL(device, cancel_auto_focus);
+    /* APEXQ/EXPRESS: Calling cancel_auto_focus causes the camera to crash for unknown reasons.
+     * Disabling it has no adverse effect. For others, only call cancel_auto_focus when the
+     * preview is enabled. This is needed so some 3rd party camera apps don't lock up. */
+#ifndef DISABLE_AUTOFOCUS
+    if (camera_preview_enabled(device))
+        ret = VENDOR_CALL(device, cancel_auto_focus);
 #endif
+
+    return ret;
 }
 
 int camera_take_picture(struct camera_device * device)
@@ -560,6 +587,7 @@ int camera_device_open(const hw_module_t* module, const char* name,
     int cameraid;
     wrapper_camera_device_t* camera_device = NULL;
     camera_device_ops_t* camera_ops = NULL;
+    wasVideo = false;
 
     android::Mutex::Autolock lock(gCameraWrapperLock);
 
