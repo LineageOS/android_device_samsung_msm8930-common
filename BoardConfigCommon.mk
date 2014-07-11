@@ -74,9 +74,6 @@ TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 # Use CAF media driver variant for 8930
 TARGET_QCOM_MEDIA_VARIANT := caf
 
-# Use retire fence from MDP driver
-TARGET_DISPLAY_USE_RETIRE_FENCE := true
-
 # Camera
 TARGET_PROVIDES_CAMERA_HAL := true
 USE_DEVICE_SPECIFIC_CAMERA := true
