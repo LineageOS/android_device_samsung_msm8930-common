@@ -79,3 +79,12 @@ TARGET_QCOM_MEDIA_VARIANT := caf
 TARGET_PROVIDES_CAMERA_HAL := true
 USE_DEVICE_SPECIFIC_CAMERA := true
 COMMON_GLOBAL_CFLAGS += -DSAMSUNG_CAMERA_HARDWARE
+
+# Offmode charging
+#
+# First we override the define to use lpm.rc, as it causes problems
+# with kitkat bootloaders. Then we define the command line to indicate
+# when power off charging is activated.
+BOARD_CHARGING_MODE_BOOTING_LPM :=
+BOARD_CHARGING_CMDLINE_NAME := "androidboot.bootchg"
+BOARD_CHARGING_CMDLINE_VALUE := "true"
