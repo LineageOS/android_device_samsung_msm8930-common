@@ -46,14 +46,18 @@ PRODUCT_PACKAGES += \
     memtrack.msm8960 \
     power.msm8960
 
+# Media
+PRODUCT_PACKAGES += \
+    libOmxAacEnc \
+    libOmxAmrEnc \
+    libOmxEvrcEnc \
+    libOmxQcelp13Enc \
+    libdashplayer \
+    libstagefrighthw
+
 # Camera Wrapper
 PRODUCT_PACKAGES += \
     camera.msm8960
-
-# Thermal profiles
-PRODUCT_PACKAGES += \
-    thermald-8930ab.conf \
-    thermald-8930.conf
 
 # Misc
 PRODUCT_PACKAGES += \
@@ -76,18 +80,38 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prima/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
     $(LOCAL_PATH)/prima/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
+    $(LOCAL_PATH)/configs/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf
+
+# Config files for hostapd
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf \
+    $(LOCAL_PATH)/configs/hostapd.accept:system/etc/hostapd/hostapd.accept \
+    $(LOCAL_PATH)/configs/hostapd.deny:system/etc/hostapd/hostapd.deny
+
+# SoftAP
+PRODUCT_PACKAGES += \
+    libQWiFiSoftApCfg \
+    libqsap_sdk
+
+# CRDA
+PRODUCT_PACKAGES += \
+    crda \
+    regdbdump \
+    regulatory.bin \
+    linville.key.pub.pem
+
 # Keylayouts
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
-    $(LOCAL_PATH)/keylayout/Generic.kl:system/usr/keylayout/Generic.kl \
     $(LOCAL_PATH)/keylayout/cyttsp-i2c.kl:system/usr/keylayout/cyttsp-i2c.kl \
     $(LOCAL_PATH)/keylayout/keypad_8960.kl:system/usr/keylayout/keypad_8960.kl \
     $(LOCAL_PATH)/keylayout/keypad_8960_liquid.kl:system/usr/keylayout/keypad_8960_liquid.kl
 
-# Needed to reset bootmode when leaving recovery
+# Thermal profiles
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/recovery/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh \
-    $(LOCAL_PATH)/recovery/postrecoveryboot.sh:recovery/system/bin/postrecoveryboot.sh
+    $(LOCAL_PATH)/configs/thermald-8930.conf:system/etc/thermald-8930.conf \
+    $(LOCAL_PATH)/configs/thermald-8930ab.conf:system/etc/thermald-8930ab.conf
 
 # We have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
