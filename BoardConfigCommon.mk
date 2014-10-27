@@ -46,7 +46,6 @@ BOARD_CHARGING_CMDLINE_VALUE := "true"
 # Display
 BOARD_EGL_CFG := device/samsung/msm8930-common/configs/egl.cfg
 TARGET_QCOM_DISPLAY_VARIANT := caf
-NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
