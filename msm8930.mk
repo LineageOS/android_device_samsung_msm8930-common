@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+PRODUCT_BOOT_JARS += qcmediaplayer
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
@@ -73,6 +75,14 @@ PRODUCT_PACKAGES += \
 # WCNSS service daemon
 PRODUCT_PACKAGES += \
     wcnss_service
+
+# QRNGD
+PRODUCT_PACKAGES += \
+    qrngd
+
+# qcmediaplayer
+PRODUCT_PACKAGES += \
+    qcmediaplayer
 
 # Prima opensource driver files
 PRODUCT_COPY_FILES += \
