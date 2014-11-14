@@ -55,6 +55,9 @@ ifeq ($(TARGET_VIDEO_PREVIEW_ALWAYS_MAX),true)
     LOCAL_CFLAGS += -DVIDEO_PREVIEW_ALWAYS_MAX
 endif
 
+LOCAL_C_INCLUDES := \
+    system/media/camera/include
+
 LOCAL_SRC_FILES := \
     CameraWrapper.cpp
 

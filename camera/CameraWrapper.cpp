@@ -66,6 +66,7 @@ camera_module_t HAL_MODULE_INFO_SYM = {
     .get_camera_info = camera_get_camera_info,
     .set_callbacks = NULL, /* remove compilation warnings */
     .get_vendor_tag_ops = NULL, /* remove compilation warnings */
+    .open_legacy = NULL, /* remove compilation warnings */
     .reserved = {0}, /* remove compilation warnings */
 };
 
@@ -172,8 +173,7 @@ static char *camera_fixup_setparams(struct camera_device *device,
     int id = CAMERA_ID(device);
     android::CameraParameters params;
     params.unflatten(android::String8(settings));
-    const char KEY_SAMSUNG_CAMERA_MODE[] = "cam_mode";
-    const char *camMode = params.get(KEY_SAMSUNG_CAMERA_MODE);
+    const char* camMode = params.get(android::CameraParameters::KEY_SAMSUNG_CAMERA_MODE);
 
     bool isVideo = !strcmp(params.get(android::CameraParameters::KEY_RECORDING_HINT), "true");
 
@@ -239,7 +239,7 @@ static char *camera_fixup_setparams(struct camera_device *device,
                 and jpeg quality 96 */
             } else {
                 /* "Normal case". Required to prevent distorted video and reboots while taking snaps */
-                params.set(KEY_SAMSUNG_CAMERA_MODE, isVideo ? "1" : "0");
+                params.set(android::CameraParameters::KEY_SAMSUNG_CAMERA_MODE, isVideo ? "1" : "0");
             }
             wasVideo = (isVideo || wasVideo);
         }

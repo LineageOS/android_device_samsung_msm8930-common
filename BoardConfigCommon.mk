@@ -18,6 +18,7 @@
 # Platform
 TARGET_BOARD_PLATFORM := msm8960
 TARGET_CPU_VARIANT := krait
+TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 
 # Audio
 BOARD_HAVE_SAMSUNG_AUDIO := true
@@ -27,11 +28,11 @@ BOARD_USES_FLUENCE_FOR_VOIP := true
 BOARD_USES_LEGACY_ALSA_AUDIO := true
 BOARD_USES_SEPERATED_AUDIO_INPUT := true
 QCOM_CSDCLIENT_ENABLED := false
-TARGET_QCOM_AUDIO_VARIANT := caf
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
+BLUETOOTH_HCI_USE_MCT := true
 
 # Camera
 TARGET_PROVIDES_CAMERA_HAL := true
@@ -45,19 +46,19 @@ BOARD_CHARGING_CMDLINE_VALUE := "true"
 
 # Display
 BOARD_EGL_CFG := device/samsung/msm8930-common/configs/egl.cfg
-TARGET_QCOM_DISPLAY_VARIANT := caf
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
 
-# Media
-TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
-TARGET_QCOM_MEDIA_VARIANT := caf
+# Enable Minikin text layout engine (will be the default soon)
+USE_MINIKIN := true
 
-# Qualcomm support
-COMMON_GLOBAL_CFLAGS += -DQCOM_BSP
-TARGET_USES_QCOM_BSP := true
+# Include an expanded selection of fonts
+EXTENDED_FONT_FOOTPRINT := true
+
+# Legacy mmap for pre-lollipop blobs
+BOARD_USES_LEGACY_MMAP := true
 
 # Wifi driver
 BOARD_HAS_QCOM_WLAN              := true
@@ -73,5 +74,5 @@ WIFI_DRIVER_FW_PATH_STA          := "sta"
 WIFI_DRIVER_FW_PATH_AP           := "ap"
 
 # Vold
-BOARD_VOLD_MAX_PARTITIONS := 24
+BOARD_VOLD_MAX_PARTITIONS := 28
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file

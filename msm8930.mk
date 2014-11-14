@@ -58,8 +58,8 @@ PRODUCT_PACKAGES += \
     libstagefrighthw
 
 # Camera Wrapper
-PRODUCT_PACKAGES += \
-    camera.msm8960
+#PRODUCT_PACKAGES += \
+#    camera.msm8960
 
 # Misc
 PRODUCT_PACKAGES += \
@@ -83,6 +83,14 @@ PRODUCT_PACKAGES += \
 # qcmediaplayer
 PRODUCT_PACKAGES += \
     qcmediaplayer
+
+# wpa_supplicant
+PRODUCT_PACKAGES += \
+    hostapd \
+    dhcpcd.conf \
+    libwpa_client \
+    wpa_supplicant \
+    wpa_supplicant.conf
 
 # Prima opensource driver files
 PRODUCT_COPY_FILES += \
