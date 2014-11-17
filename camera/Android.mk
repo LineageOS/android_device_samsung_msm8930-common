@@ -55,6 +55,9 @@ ifeq ($(TARGET_VIDEO_PREVIEW_ALWAYS_MAX),true)
     LOCAL_CFLAGS += -DVIDEO_PREVIEW_ALWAYS_MAX
 endif
 
+LOCAL_C_INCLUDES := \
+    system/media/camera/include
+
 LOCAL_SRC_FILES := \
     CameraWrapper.cpp
 
@@ -62,7 +65,7 @@ LOCAL_SHARED_LIBRARIES := \
     libhardware liblog libcamera_client libutils
 
 LOCAL_MODULE_PATH := $(TARGET_OUT_SHARED_LIBRARIES)/hw
-LOCAL_MODULE := camera.msm8960
+LOCAL_MODULE := camera.$(TARGET_BOARD_PLATFORM)
 LOCAL_MODULE_TAGS := optional
 
 include $(BUILD_SHARED_LIBRARY)
