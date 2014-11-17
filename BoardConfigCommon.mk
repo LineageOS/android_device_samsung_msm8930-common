@@ -49,6 +49,9 @@ NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
 
+# Enable Minikin text layout engine (will be the default soon)
+USE_MINIKIN := true
+
 # Wifi driver
 BOARD_HAS_QCOM_WLAN              := true
 BOARD_HAS_QCOM_WLAN_SDK          := true
