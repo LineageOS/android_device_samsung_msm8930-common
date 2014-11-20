@@ -175,7 +175,10 @@ static char *camera_fixup_setparams(struct camera_device *device,
     params.unflatten(android::String8(settings));
     const char* camMode = params.get(android::CameraParameters::KEY_SAMSUNG_CAMERA_MODE);
 
-    bool isVideo = !strcmp(params.get(android::CameraParameters::KEY_RECORDING_HINT), "true");
+    const char* recordingHint = params.get(android::CameraParameters::KEY_RECORDING_HINT);
+    bool isVideo = false;
+    if (recordingHint)
+        isVideo = !strcmp(recordingHint, "true");
 
 #if !LOG_NDEBUG
     ALOGV("%s: original parameters:", __FUNCTION__);
@@ -248,14 +251,13 @@ static char *camera_fixup_setparams(struct camera_device *device,
     }
 #endif
 #ifdef ENABLE_ZSL
-    /* Only activate ZSL if requested by the app! */
-    if (!strcmp(params.get(android::CameraParameters::KEY_ZSL), "on")) {
-        params.set(android::CameraParameters::KEY_CAMERA_MODE, "1");
-#ifdef MAGIC_ZSL_1508
+    if (id != 1) {
+        params.set(android::CameraParameters::KEY_ZSL, isVideo ? "off" : "on");
+        params.set(android::CameraParameters::KEY_CAMERA_MODE, isVideo ? "0" :"1");
+
         if (!isVideo) {
             camera_send_command(device, 1508, 0, 0);
         }
-#endif
     }
 #endif
 
