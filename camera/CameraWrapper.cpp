@@ -254,10 +254,6 @@ static char *camera_fixup_setparams(struct camera_device *device,
     if (id != 1) {
         params.set(android::CameraParameters::KEY_ZSL, isVideo ? "off" : "on");
         params.set(android::CameraParameters::KEY_CAMERA_MODE, isVideo ? "0" :"1");
-
-        if (!isVideo) {
-            camera_send_command(device, 1508, 0, 0);
-        }
     }
 #endif
 
