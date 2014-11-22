@@ -63,6 +63,8 @@ EXTENDED_FONT_FOOTPRINT := true
 # Legacy MMAP for pre-lollipop blobs
 BOARD_USES_LEGACY_MMAP := true
 
+MALLOC_IMPL := dlmalloc
+
 # Wifi driver
 BOARD_HAS_QCOM_WLAN              := true
 BOARD_HAS_QCOM_WLAN_SDK          := true
