@@ -47,10 +47,6 @@ ifeq ($(TARGET_ADD_ISO_MODE_HJR),true)
     LOCAL_CFLAGS += -DISO_MODE_HJR
 endif
 
-ifeq ($(TARGET_VIDEO_PREVIEW_ALWAYS_MAX),true)
-    LOCAL_CFLAGS += -DVIDEO_PREVIEW_ALWAYS_MAX
-endif
-
 LOCAL_SRC_FILES := \
     CameraWrapper.cpp
 
