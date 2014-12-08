@@ -121,14 +121,9 @@ static char *camera_fixup_getparams(int id, const char *settings)
     params.dump();
 #endif
 
-    // fix params here
     params.set(android::CameraParameters::KEY_SUPPORTED_ISO_MODES, iso_values[id]);
-#ifdef PREVIEW_SIZE_FIXUP
-    params.set(android::CameraParameters::KEY_PREFERRED_PREVIEW_SIZE_FOR_VIDEO, id ? "640x480" : "800x480");
-#endif
-#ifdef VIDEO_PREVIEW_ALWAYS_MAX
-    params.set(android::CameraParameters::KEY_PREFERRED_PREVIEW_SIZE_FOR_VIDEO, "1920x1080");
-#endif
+    params.set(android::CameraParameters::KEY_PREFERRED_PREVIEW_SIZE_FOR_VIDEO, "1280x720");
+
 #ifdef FFC_PICTURE_FIXUP
     if (id == 1) {
         params.set(android::CameraParameters::KEY_SUPPORTED_PICTURE_SIZES, "1392x1392,1280x720,640x480");
@@ -136,7 +131,9 @@ static char *camera_fixup_getparams(int id, const char *settings)
 #endif
 #ifdef FFC_VIDEO_FIXUP
     if (id == 1) {
-        params.set(android::CameraParameters::KEY_SUPPORTED_VIDEO_SIZES, "1280x720,640x480,320x240,176x144");
+        if (!params.get(android::CameraParameters::KEY_SUPPORTED_VIDEO_SIZES)) {
+            params.set(android::CameraParameters::KEY_SUPPORTED_VIDEO_SIZES, "1280x720,640x480,320x240,176x144");
+        }
     }
 #endif
 
@@ -185,8 +182,6 @@ static char *camera_fixup_setparams(struct camera_device *device,
     params.dump();
 #endif
 
-    // fix params here
-    // No need to fix-up ISO_HJR, it is the same for userspace and the camera lib
     if (params.get("iso")) {
         const char *isoMode = params.get(android::CameraParameters::KEY_ISO_MODE);
         if (strcmp(isoMode, "ISO100") == 0)
@@ -202,17 +197,6 @@ static char *camera_fixup_setparams(struct camera_device *device,
         else if (strcmp(isoMode, "ISO50") == 0)
             params.set(android::CameraParameters::KEY_ISO_MODE, "50");
     }
-
-#ifdef FFC_PICTURE_FIXUP
-    if (id == 1) {
-        params.set(android::CameraParameters::KEY_SUPPORTED_PICTURE_SIZES, "1392x1392,1280x720,640x480");
-    }
-#endif
-#ifdef FFC_VIDEO_FIXUP
-    if (id == 1) {
-        params.set(android::CameraParameters::KEY_SUPPORTED_VIDEO_SIZES, "1280x720,640x480,320x240,176x144");
-    }
-#endif
 
 #ifdef DISABLE_FACE_DETECTION
 #ifndef DISABLE_FACE_DETECTION_BOTH_CAMERAS
