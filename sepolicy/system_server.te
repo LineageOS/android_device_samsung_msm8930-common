@@ -1,0 +1,4 @@
+allow system_server default_prop:property_service set;
+allow system_server efs_file:dir search;
+allow system_server efs_file:file r_file_perms;
+allow system_server time_daemon:unix_stream_socket connectto;

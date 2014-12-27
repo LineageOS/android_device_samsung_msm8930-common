@@ -86,3 +86,25 @@ WIFI_DRIVER_FW_PATH_AP           := "ap"
 
 # Include common SE policies
 -include device/qcom/sepolicy/sepolicy.mk
+
+BOARD_SEPOLICY_DIRS += device/samsung/msm8930-common/sepolicy
+
+BOARD_SEPOLICY_UNION += \
+    file_contexts \
+    init_shell.te \
+    init.te \
+    mediaserver.te \
+    mm-qcamerad.te \
+    mpdecision.te \
+    property_contexts \
+    property.te \
+    qseecomd.te \
+    rild.te \
+    rmt_storage.te \
+    sysinit.te \
+    system_app.te \
+    system_server.te \
+    thermal-engine.te \
+    thermald.te \
+    time_daemon.te \
+    vold.te

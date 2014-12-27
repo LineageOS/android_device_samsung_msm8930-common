@@ -1,0 +1,10 @@
+allow mpdecision self:process execmem;
+
+type_transition mpdecision socket_device:sock_file mpctl_socket;
+
+allow mpdecision socket_device:dir add_name;
+
+allow mpdecision system_data_file:dir rw_dir_perms;
+type_transition mpdecision system_data_file:file mpctl_data_file;
+
+binder_use(mpdecision)
