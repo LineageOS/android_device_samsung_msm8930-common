@@ -13,3 +13,5 @@
 
 /dev/socket/mpdecision		u:object_r:mpctl_socket:s0
 /dev/socket/mpctl		u:object_r:mpctl_socket:s0
+
+/dev/alps_io			u:object_r:sensors_device:s0
