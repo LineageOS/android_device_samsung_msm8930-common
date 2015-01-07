@@ -120,9 +120,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermald-8930.conf:system/etc/thermald-8930.conf \
     $(LOCAL_PATH)/configs/thermald-8930ab.conf:system/etc/thermald-8930ab.conf
 
-# We have enough storage space to hold precise GC data
-PRODUCT_TAGS += dalvik.gc.type-precise
-
 # Common overlay
 DEVICE_PACKAGE_OVERLAYS += device/samsung/msm8930-common/overlay
 
