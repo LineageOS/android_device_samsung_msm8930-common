@@ -90,6 +90,7 @@ WIFI_DRIVER_FW_PATH_AP           := "ap"
 BOARD_SEPOLICY_DIRS += device/samsung/msm8930-common/sepolicy
 
 BOARD_SEPOLICY_UNION += \
+    file.te \
     file_contexts \
     init_shell.te \
     init.te \
@@ -107,4 +108,5 @@ BOARD_SEPOLICY_UNION += \
     thermal-engine.te \
     thermald.te \
     time_daemon.te \
+    untrusted_app.te \
     vold.te
