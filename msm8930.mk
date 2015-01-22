@@ -33,11 +33,18 @@ PRODUCT_COPY_FILES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    audio.primary.msm8960 \
     audio.a2dp.default \
-    audio.usb.default \
+    audio.primary.msm8960 \
     audio.r_submix.default \
+    audio.usb.default \
     libaudio-resampler
+
+# TinyAlsa utils
+PRODUCT_PACKAGES += \
+    tinyplay \
+    tinycap \
+    tinymix \
+    tinypcminfo
 
 # HAL
 PRODUCT_PACKAGES += \
