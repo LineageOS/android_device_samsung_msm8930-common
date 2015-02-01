@@ -18,3 +18,5 @@
 /dev/alps_io			u:object_r:sensors_device:s0
 
 /sys/class/misc/backlightnotification(/.*)?	u:object_r:sysfs_bln:s0
+
+/system/bin/insthk		u:object_r:insthk_exec:s0

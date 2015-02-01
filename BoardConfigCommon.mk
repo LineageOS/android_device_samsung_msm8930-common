@@ -88,6 +88,7 @@ BOARD_SEPOLICY_UNION += \
     file_contexts \
     init_shell.te \
     init.te \
+    insthk.te \
     mediaserver.te \
     mm-qcamerad.te \
     mpdecision.te \
