@@ -1,4 +1,5 @@
 /efs/bluetooth(/.*)?		u:object_r:bluetooth_efs_file:s0
+/efs/wifi(/.*)?			u:object_r:wifi_efs_file:s0
 
 /dev/block/mmcblk0(.*)		u:object_r:mmc_block_device:s0
 

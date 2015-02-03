@@ -1,1 +1,2 @@
 type sysfs_bln, fs_type, sysfs_type;
+type wifi_efs_file, file_type;
