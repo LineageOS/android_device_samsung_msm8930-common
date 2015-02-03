@@ -80,6 +80,7 @@ PRODUCT_PACKAGES += \
 
 # WCNSS service daemon
 PRODUCT_PACKAGES += \
+    libwcnss_qmi \
     wcnss_service
 
 # qcmediaplayer
