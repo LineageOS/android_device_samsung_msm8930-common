@@ -43,9 +43,6 @@ NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
 
-# Enable Minikin text layout engine (will be the default soon)
-USE_MINIKIN := true
-
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
 
