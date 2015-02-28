@@ -87,6 +87,7 @@ BOARD_SEPOLICY_UNION += \
     file_contexts \
     init_shell.te \
     init.te \
+    install_recovery.te \
     insthk.te \
     kernel.te \
     mediaserver.te \
