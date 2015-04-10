@@ -7,3 +7,4 @@ allow system_server sysfs_bln:file rw_file_perms;
 allow system_server sysfs_bln:lnk_file read;
 allow system_server recovery_cache_file:dir { relabelfrom create_dir_perms };
 allow system_server recovery_cache_file:file { relabelfrom create_file_perms };
+allow system_server display_sysfs:file rw_file_perms;
