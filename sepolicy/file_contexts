@@ -22,3 +22,5 @@
 /sys/class/misc/backlightnotification(/.*)?	u:object_r:sysfs_bln:s0
 
 /system/bin/insthk		u:object_r:insthk_exec:s0
+
+/sys/devices/virtual/graphics/fb0/rgb		u:object_r:display_sysfs:s0
