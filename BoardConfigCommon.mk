@@ -92,6 +92,7 @@ BOARD_SEPOLICY_UNION += \
     mediaserver.te \
     mm-qcamerad.te \
     mpdecision.te \
+    netd.te \
     property_contexts \
     property.te \
     qseecomd.te \
