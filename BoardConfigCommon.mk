@@ -104,6 +104,7 @@ BOARD_SEPOLICY_UNION += \
     thermal-engine.te \
     thermald.te \
     time_daemon.te \
+    uncrypt.te \
     untrusted_app.te \
     vold.te \
     wcnss_service.te
