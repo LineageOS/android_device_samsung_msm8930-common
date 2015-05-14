@@ -82,6 +82,7 @@ WIFI_DRIVER_FW_PATH_AP           := "ap"
 BOARD_SEPOLICY_DIRS += device/samsung/msm8930-common/sepolicy
 
 BOARD_SEPOLICY_UNION += \
+    debuggerd.te \
     file.te \
     file_contexts \
     init_shell.te \
