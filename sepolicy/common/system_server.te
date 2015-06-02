@@ -1,0 +1,81 @@
+#============= system_server ==============
+# allow system_server to communicate with cnd process over cnd_socket
+unix_socket_connect(system_server, cnd, cnd)
+# allow  system/framework applications to update the cnd configuration files
+allow system_server cnd_data_file:dir { read open write getattr add_name };
+allow system_server cnd_data_file:file { create write getattr setattr read lock open };
+
+# Access to sensors socket
+unix_socket_connect(system_server, sensors, sensors)
+unix_socket_send(system_server, sensors, sensors)
+allow system_server sensors:unix_stream_socket sendto;
+allow system_server sensors_socket:sock_file r_file_perms;
+qmux_socket(system_server);
+
+# access to perflock
+allow system_server mpctl_socket:dir r_dir_perms;
+unix_socket_send(system_server, mpctl, mpdecision)
+unix_socket_connect(system_server, mpctl, mpdecision)
+
+# allow  system/framework applications to update the dpmd configuration files
+unix_socket_connect(system_server, dpmd, dpmd);
+allow system_server dpmd_socket:sock_file write;
+allow system_server dpmd_data_file:dir create_dir_perms;
+allow system_server dpmservice:service_manager add;
+allow system_server dpmd_data_file:file create_file_perms;
+allow system_server socket_device:sock_file write;
+
+unix_socket_send(system_server, mpctl, perfd)
+unix_socket_connect(system_server, mpctl, perfd)
+
+# For location
+type_transition system_server location_data_file:sock_file location_socket "location-mq-s";
+type_transition system_server location_data_file:sock_file location_socket "alarm_svc";
+allow system_server location:unix_stream_socket connectto;
+allow system_server location_data_file:file create_file_perms;
+allow system_server location_data_file:dir rw_dir_perms;
+allow system_server location_data_file:fifo_file create_file_perms;
+allow system_server location_app_data_file:file rw_file_perms;
+allow system_server location_app_data_file:dir r_dir_perms;
+allow system_server location_socket:sock_file create_file_perms;
+
+#For wifistatemachine
+allow system_server kernel:key search;
+allow system_server wbc_service:service_manager add;
+
+#For ssr
+allow system_server ssr_device:chr_file { read open };
+
+allow system_server fuse:dir search;
+allow system_server persist_file:dir search;
+
+#For ANT tty communication and to set wc_transport prop
+allow system_server bluetooth_prop:property_service set;
+allow system_server serial_device:chr_file rw_file_perms;
+allow system_server smd_device:chr_file rw_file_perms;
+
+#For BT firmware
+allow system_server bt_firmware_file:dir r_dir_perms;
+allow system_server bt_firmware_file:file r_file_perms;
+
+# Allow system_server to add digital pen system service
+allow system_server usf_service:service_manager add;
+
+# Allow system server access to usf resources
+allow system_server usf:process signal;
+allow system_server usf:unix_stream_socket connectto;
+allow system_server usf_data_file:sock_file write;
+allow system_server usf_data_file:dir rw_dir_perms;
+allow system_server usf_data_file:file r_file_perms;
+allow system_server usf_data_file:lnk_file r_file_perms;
+
+# For WFD
+allow system_server graphics_device:chr_file rw_file_perms;
+allow system_server audio_device:chr_file rw_file_perms;
+allow system_server graphics_device:dir r_dir_perms;
+allow system_server firmware_file:dir r_dir_perms;
+allow system_server firmware_file:file r_file_perms;
+allow system_server tee_device:chr_file rw_file_perms;
+
+#diag read/write
+diag_rw(system_server);

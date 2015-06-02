@@ -1,0 +1,12 @@
+# property for uicc_daemon
+type uicc_prop, property_type;
+type qcom_ims_prop, property_type;
+
+# properties for usf daemons
+type usf_prop, property_type;
+
+#properites for mm-qcamera-daemon(Camera)
+type camera_prop, property_type;
+
+#properties for wcnss_wlan daemons.
+type qti_wlan_prop, property_type;
