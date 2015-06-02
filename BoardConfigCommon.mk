@@ -79,33 +79,5 @@ WPA_SUPPLICANT_VERSION           := VER_0_8_X
 WIFI_DRIVER_FW_PATH_STA          := "sta"
 WIFI_DRIVER_FW_PATH_AP           := "ap"
 
-BOARD_SEPOLICY_DIRS += device/samsung/msm8930-common/sepolicy
-
-BOARD_SEPOLICY_UNION += \
-    debuggerd.te \
-    file.te \
-    file_contexts \
-    init_shell.te \
-    init.te \
-    install_recovery.te \
-    insthk.te \
-    kernel.te \
-    mediaserver.te \
-    mm-qcamerad.te \
-    mpdecision.te \
-    netd.te \
-    property_contexts \
-    property.te \
-    qseecomd.te \
-    rild.te \
-    rmt_storage.te \
-    sysinit.te \
-    system_app.te \
-    system_server.te \
-    thermal-engine.te \
-    thermald.te \
-    time_daemon.te \
-    uncrypt.te \
-    untrusted_app.te \
-    vold.te \
-    wcnss_service.te
+# Include SE policies
+-include device/samsung/msm8930-common/sepolicy/Android.mk
