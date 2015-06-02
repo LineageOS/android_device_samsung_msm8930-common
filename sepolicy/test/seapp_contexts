@@ -1,0 +1,2 @@
+user=_app seinfo=platform name=com.qualcomm.location.qvtester domain=location_app type=location_app_data_file
+user=_app seinfo=platform name=com.qualcomm.qct.dlt domain=location_app type=location_app_data_file
