@@ -51,7 +51,6 @@ BOARD_SEPOLICY_UNION += \
        mmi.te \
        mm-pp-daemon.te \
        mm-qcamerad.te \
-       mm-qcamerad.te \
        mpdecision.te \
        msm_irqbalanced.te \
        netd.te \
@@ -88,7 +87,6 @@ BOARD_SEPOLICY_UNION += \
        surfaceflinger.te \
        sysinit.te \
        system_app.te \
-       system_app.te \
        system_server.te \
        te_macros \
        thermald.te \
@@ -100,7 +98,6 @@ BOARD_SEPOLICY_UNION += \
        usb_uicc_daemon.te \
        usf.te \
        vm_bms.te \
-       vold.te \
        vold.te \
        wcnss_service.te \
        wfdservice.te \
