@@ -19,8 +19,7 @@
 
 /dev/alps_io			u:object_r:sensors_device:s0
 
-/sys/class/misc/backlightnotification(/.*)?	u:object_r:sysfs_bln:s0
-
 /system/bin/insthk		u:object_r:insthk_exec:s0
 
-/sys/devices/virtual/graphics/fb0/rgb		u:object_r:display_sysfs:s0
+/sys/devices/virtual/misc/backlightnotification(/.*)?	--  u:object_r:sysfs_bln:s0
+/sys/devices/virtual/graphics/fb0/rgb			--  u:object_r:display_sysfs:s0
