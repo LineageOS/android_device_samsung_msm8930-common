@@ -1,1 +1,2 @@
 allow sysinit mmc_block_device:file read;
+allow sysinit sysfs_bln: file rw_file_perms;
