@@ -55,12 +55,19 @@ PRODUCT_PACKAGES += \
 
 # Media
 PRODUCT_PACKAGES += \
+    libc2dcolorconvert \
+    libdashplayer \
+    libdivxdrmdecrypt \
+    libmm-omxcore \
+    libOmxCore \
+    libOmxVenc \
+    libOmxVdec \
     libOmxAacEnc \
     libOmxAmrEnc \
     libOmxEvrcEnc \
     libOmxQcelp13Enc \
-    libdashplayer \
-    libstagefrighthw
+    libstagefrighthw \
+    qcmediaplayer
 
 # Camera Wrapper
 PRODUCT_PACKAGES += \
@@ -80,10 +87,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libwcnss_qmi \
     wcnss_service
-
-# qcmediaplayer
-PRODUCT_PACKAGES += \
-    qcmediaplayer
 
 # Prima opensource driver files
 PRODUCT_COPY_FILES += \
