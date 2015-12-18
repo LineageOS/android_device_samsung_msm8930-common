@@ -1,7 +1,4 @@
 # access to perflock
-allow untrusted_app mpctl_socket:dir r_dir_perms;
-unix_socket_send(untrusted_app, mpctl, perfd)
-unix_socket_connect(untrusted_app, mpctl, perfd)
 unix_socket_send(untrusted_app, mpctl, mpdecision)
 unix_socket_connect(untrusted_app, mpctl, mpdecision)
 
@@ -12,4 +9,13 @@ neverallow untrusted_app diag_device:chr_file rw_file_perms;
 # using binder call
 userdebug_or_eng(`
   binder_call(untrusted_app, imscm)
+')
+
+# for finding wbc_service
+allow untrusted_app wbc_service:service_manager find;
+
+# using binder call
+userdebug_or_eng(`
+  allow untrusted_app improve_touch_service:service_manager find;
+  binder_call(untrusted_app, hbtp);
 ')
