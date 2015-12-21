@@ -1,4 +1,4 @@
-allow mpdecision self:process execmem;
+allow mpdecision system_file:file execmod;
 
 type_transition mpdecision socket_device:sock_file mpctl_socket;
 
