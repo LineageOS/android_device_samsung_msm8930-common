@@ -51,6 +51,9 @@ EXTENDED_FONT_FOOTPRINT := true
 # Legacy MMAP for pre-lollipop blobs
 BOARD_USES_LEGACY_MMAP := true
 
+# Use in-kernel exFAT support
+TARGET_KERNEL_HAVE_EXFAT := true
+
 # Shader cache config options
 # Maximum size of the  GLES Shaders that can be cached for reuse.
 # Increase the size if shaders of size greater than 12KB are used.
