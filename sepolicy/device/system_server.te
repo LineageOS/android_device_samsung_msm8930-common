@@ -8,4 +8,3 @@ allow system_server recovery_cache_file:file { relabelfrom create_file_perms };
 allow system_server persist_file:dir { getattr read write };
 allow system_server time_daemon:unix_stream_socket connectto;
 allow system_server system_file:file execmod;
-allow system_server storage_stub_file:dir { getattr };
