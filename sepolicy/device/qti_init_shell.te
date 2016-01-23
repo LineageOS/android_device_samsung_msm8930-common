@@ -6,6 +6,3 @@ allow qti_init_shell apk_data_file:file { create write };
 allow qti_init_shell efs_file:dir search;
 allow qti_init_shell bluetooth_efs_file:dir search;
 allow qti_init_shell bluetooth_efs_file:file r_file_perms;
-
-# Allow setting audio prop
-allow qti_init_shell audio_prop:property_service set;

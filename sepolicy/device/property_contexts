@@ -1,5 +1,4 @@
 persist.sys.camera.preview		u:object_r:camera_prop:s0
-qcom.audio.init				u:object_r:audio_prop:s0
 sys.qseecomd.enable			u:object_r:qseecomd_prop:s0
 user.language				u:object_r:default_prop:s0
 user.region				u:object_r:default_prop:s0
