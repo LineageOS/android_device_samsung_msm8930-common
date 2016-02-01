@@ -172,6 +172,7 @@
 /system/vendor/bin/pd-api-test                  u:object_r:pd_mapper_exec:s0
 /system/bin/usb_uicc_client                     u:object_r:usb_uicc_daemon_exec:s0
 /system/bin/qcom-system-daemon                  u:object_r:qcomsysd_exec:s0
+/system/bin/poweroffhandler                     u:object_r:poweroffhandler_exec:s0
 /system/xbin/qlogd                              u:object_r:qlogd_exec:s0
 /system/bin/ipacm                               u:object_r:ipacm_exec:s0
 /system/bin/ipacm-diag                          u:object_r:ipacm-diag_exec:s0
@@ -220,7 +221,7 @@
 /system/bin/tbaseLoader                         u:object_r:tbaseLoader_exec:s0
 /system/bin/mcStarter                           u:object_r:mcStarter_exec:s0
 /system/bin/fstman                              u:object_r:fstman_exec:s0
-/system/vendor/bin/mdtp_service                 u:object_r:mdtpdaemon_exec:s0
+/system/vendor/bin/mdtpd                        u:object_r:mdtpdaemon_exec:s0
 
 ###################################
 # sysfs files
@@ -313,10 +314,13 @@
 /persist/data(/.*)?                                                 u:object_r:persist_drm_file:s0
 /persist/data/tz(/.*)?                                              u:object_r:persist_drm_file:s0
 /persist/data/sfs(/.*)?                                             u:object_r:persist_drm_file:s0
+/persist/qc_senseid(/.*)?                                           u:object_r:persist_qc_senseid_file:s0
 /persist/usf(/.*)?                                                  u:object_r:persist_usf_file:s0
 /persist/hlos_rfs(/.*)?                                             u:object_r:rfs_shared_hlos_file:s0
 /persist/display(/.*)?                                              u:object_r:persist_display_file:s0
 /persist/rfs.*                                                      u:object_r:rfs_file:s0
+/persist/misc(/.*)?                                                 u:object_r:persist_misc_file:s0
+/persist/speccfg(/.*)?                                              u:object_r:regionalization_file:s0
 
 ###################################
 # etc files
