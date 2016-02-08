@@ -107,13 +107,6 @@ PRODUCT_PACKAGES += \
     libQWiFiSoftApCfg \
     libqsap_sdk
 
-# CRDA
-PRODUCT_PACKAGES += \
-    crda \
-    regdbdump \
-    regulatory.bin \
-    linville.key.pub.pem
-
 # WPA supplicant
 PRODUCT_PACKAGES += \
     dhcpcd.conf \
