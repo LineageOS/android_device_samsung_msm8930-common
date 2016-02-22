@@ -144,10 +144,13 @@ static char *camera_fixup_getparams(int id, const char *settings)
     /* Disable face detection for front facing camera */
     if (id == 1) {
 #endif
-        params.set(android::CameraParameters::KEY_MAX_NUM_DETECTED_FACES_HW, "0");
-        params.set(android::CameraParameters::KEY_MAX_NUM_DETECTED_FACES_SW, "0");
-        params.set(android::CameraParameters::KEY_FACE_DETECTION, "off");
-        params.set(android::CameraParameters::KEY_SUPPORTED_FACE_DETECTION, "off");
+        params.remove(android::CameraParameters::KEY_QC_FACE_RECOGNITION);
+        params.remove(android::CameraParameters::KEY_QC_SUPPORTED_FACE_RECOGNITION);
+        params.remove(android::CameraParameters::KEY_QC_SUPPORTED_FACE_RECOGNITION_MODES);
+        params.remove(android::CameraParameters::KEY_QC_FACE_DETECTION);
+        params.remove(android::CameraParameters::KEY_QC_SUPPORTED_FACE_DETECTION);
+        params.remove(android::CameraParameters::KEY_FACE_DETECTION);
+        params.remove(android::CameraParameters::KEY_SUPPORTED_FACE_DETECTION);
 #ifndef DISABLE_FACE_DETECTION_BOTH_CAMERAS
     }
 #endif
@@ -199,20 +202,6 @@ static char *camera_fixup_setparams(struct camera_device *device,
         else if (strcmp(isoMode, "ISO50") == 0)
             params.set(android::CameraParameters::KEY_ISO_MODE, "50");
     }
-
-#ifdef DISABLE_FACE_DETECTION
-#ifndef DISABLE_FACE_DETECTION_BOTH_CAMERAS
-    /* Disable face detection for front facing camera */
-    if (id == 1) {
-#endif
-        params.set(android::CameraParameters::KEY_MAX_NUM_DETECTED_FACES_HW, "0");
-        params.set(android::CameraParameters::KEY_MAX_NUM_DETECTED_FACES_SW, "0");
-        params.set(android::CameraParameters::KEY_FACE_DETECTION, "off");
-        params.set(android::CameraParameters::KEY_SUPPORTED_FACE_DETECTION, "off");
-#ifndef DISABLE_FACE_DETECTION_BOTH_CAMERAS
-    }
-#endif
-#endif
 
 #ifdef SAMSUNG_CAMERA_MODE
     /* Samsung camcorder mode */
