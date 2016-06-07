@@ -32,4 +32,5 @@
 /system/bin/insthk		u:object_r:insthk_exec:s0
 /system/bin/geomagneticd	u:object_r:geomagneticd_exec:s0
 
-/sys/devices/virtual/misc/backlightnotification(/.*)?	--  u:object_r:sysfs_bln:s0
+/sys/devices/virtual/misc/backlightnotification(/.*)?	u:object_r:sysfs_bln:s0
+/sys/devices/virtual/sec/sec_touchkey/touchkey_enable	u:object_r:sysfs_keypad:s0
