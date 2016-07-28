@@ -1,1 +1,4 @@
 allow kernel block_device:blk_file rw_file_perms;
+
+# sdcardfs madness
+allow kernel media_rw_data_file:file { read write };

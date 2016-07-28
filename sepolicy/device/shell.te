@@ -8,3 +8,10 @@ allow shell perfprofd_exec:file { getattr };
 allow shell vold_exec:file { getattr };
 allow shell vdc_exec:file { getattr };
 
+# sdcardfs madness
+allow shell media_rw_data_file:dir { read create open search write add_name remove_name rmdir rename };
+allow shell media_rw_data_file:file { create open write unlink rename append };
+allow shell vfat:dir { write add_name create remove_name rename rmdir };
+allow shell vfat:file { create unlink rename };
+allow shell sdcard_posix:dir { write add_name create remove_name rename rmdir };
+allow shell sdcard_posix:file { create unlink rename };

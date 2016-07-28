@@ -9,3 +9,6 @@ allow system_server persist_file:dir { getattr read write };
 allow system_server time_daemon:unix_stream_socket connectto;
 allow system_server system_file:file execmod;
 allow system_server sysfs_keypad:file rw_file_perms;
+
+# sdcardfs madness
+allow system_server media_rw_data_file:dir search;
