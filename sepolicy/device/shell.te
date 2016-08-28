@@ -8,6 +8,11 @@ allow shell perfprofd_exec:file { getattr };
 allow shell vold_exec:file { getattr };
 allow shell vdc_exec:file { getattr };
 
+# backlight notification
+allow shell sysfs_bln:dir r_dir_perms;
+allow shell sysfs_bln:file rw_file_perms;
+allow shell sysfs_bln:lnk_file r_file_perms;
+
 # sdcardfs madness
 allow shell media_rw_data_file:dir create_dir_perms;
 allow shell media_rw_data_file:file create_file_perms;
