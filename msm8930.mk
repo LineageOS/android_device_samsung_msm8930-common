@@ -73,9 +73,7 @@ PRODUCT_PACKAGES += \
 
 # Live Wallpapers
 PRODUCT_PACKAGES += \
-    LiveWallpapers \
-    LiveWallpapersPicker \
-    librs_jni
+    LiveWallpapersPicker
 
 # WCNSS service daemon
 PRODUCT_PACKAGES += \
@@ -105,7 +103,6 @@ PRODUCT_PACKAGES += \
 
 # WPA supplicant
 PRODUCT_PACKAGES += \
-    dhcpcd.conf \
     hostapd \
     libwpa_client \
     wpa_supplicant \
