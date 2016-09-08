@@ -71,12 +71,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
 
-# Live Wallpapers
-PRODUCT_PACKAGES += \
-    LiveWallpapers \
-    LiveWallpapersPicker \
-    librs_jni
-
 # WCNSS service daemon
 PRODUCT_PACKAGES += \
     libwcnss_qmi \
@@ -105,7 +99,6 @@ PRODUCT_PACKAGES += \
 
 # WPA supplicant
 PRODUCT_PACKAGES += \
-    dhcpcd.conf \
     hostapd \
     libwpa_client \
     wpa_supplicant \
@@ -114,6 +107,10 @@ PRODUCT_PACKAGES += \
 # Stlport
 PRODUCT_PACKAGES += \
     libstlport
+
+# Telephony-ext
+PRODUCT_PACKAGES += telephony-ext
+PRODUCT_BOOT_JARS += telephony-ext
 
 # Thermal profiles
 PRODUCT_COPY_FILES += \
