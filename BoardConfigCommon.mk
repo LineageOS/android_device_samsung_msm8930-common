@@ -19,6 +19,13 @@
 TARGET_BOARD_PLATFORM := msm8960
 TARGET_CPU_VARIANT := krait
 
+# Use dlmalloc instead of jemalloc for mallocs
+MALLOC_SVELTE := true
+
+# Don't try to build and run all tests by default. Several tests have
+# dependencies on the framework.
+ANDROID_NO_TEST_CHECK := true
+
 # Audio
 BOARD_USES_ALSA_AUDIO := true
 
@@ -28,8 +35,12 @@ BOARD_HAVE_BLUETOOTH_QCOM := true
 BLUETOOTH_HCI_USE_MCT := true
 
 # Camera
+TARGET_NEEDS_GCC_LIBC := true
+TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
+TARGET_HAS_LEGACY_CAMERA_HAL1 := true
 TARGET_PROVIDES_CAMERA_HAL := true
 USE_DEVICE_SPECIFIC_CAMERA := true
+BOARD_GLOBAL_CFLAGS += -DMETADATA_CAMERA_SOURCE
 
 # Charger
 BOARD_CHARGING_CMDLINE_NAME := "androidboot.bootchg"
@@ -37,6 +48,9 @@ BOARD_CHARGING_CMDLINE_VALUE := "true"
 
 # Display
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
+
+# Bootanimation
+TARGET_BOOTANIMATION_MULTITHREAD_DECODE := true
 
 # Renderscript
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
@@ -70,6 +84,3 @@ TARGET_USES_WCNSS_CTRL           := true
 WPA_SUPPLICANT_VERSION           := VER_0_8_X
 WIFI_DRIVER_FW_PATH_STA          := "sta"
 WIFI_DRIVER_FW_PATH_AP           := "ap"
-
-# Include SE policies
--include device/samsung/msm8930-common/sepolicy/Android.mk
