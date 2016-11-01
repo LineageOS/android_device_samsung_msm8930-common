@@ -19,6 +19,14 @@
 TARGET_BOARD_PLATFORM := msm8960
 TARGET_CPU_VARIANT := krait
 
+# Configure jemalloc for a low memory device. This is needed
+# for us as it disables tcache, which is breaking camera.
+MALLOC_SVELTE := true
+
+# Don't try to build and run all tests by default. Several tests have
+# dependencies on the framework.
+ANDROID_NO_TEST_CHECK := true
+
 # Audio
 BOARD_USES_ALSA_AUDIO := true
 
@@ -28,6 +36,10 @@ BOARD_HAVE_BLUETOOTH_QCOM := true
 BLUETOOTH_HCI_USE_MCT := true
 
 # Camera
+BOARD_GLOBAL_CFLAGS += -DMETADATA_CAMERA_SOURCE
+TARGET_HAS_LEGACY_CAMERA_HAL1 := true
+TARGET_NEEDS_GCC_LIBC := true
+TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
 TARGET_PROVIDES_CAMERA_HAL := true
 USE_DEVICE_SPECIFIC_CAMERA := true
 
@@ -73,6 +85,3 @@ TARGET_USES_WCNSS_CTRL           := true
 WPA_SUPPLICANT_VERSION           := VER_0_8_X
 WIFI_DRIVER_FW_PATH_STA          := "sta"
 WIFI_DRIVER_FW_PATH_AP           := "ap"
-
-# Include SE policies
--include device/samsung/msm8930-common/sepolicy/Android.mk
