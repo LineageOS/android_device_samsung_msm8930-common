@@ -21,7 +21,9 @@ TARGET_CPU_VARIANT := krait
 
 # Configure jemalloc for a low memory device. This is needed
 # for us as it disables tcache, which is breaking camera.
+# Also, for Android 7.1 we need to set decay time to 0.
 MALLOC_SVELTE := true
+BOARD_GLOBAL_CFLAGS += -DDECAY_TIME_DEFAULT=0
 
 # Don't try to build and run all tests by default. Several tests have
 # dependencies on the framework.
@@ -36,7 +38,6 @@ BOARD_HAVE_BLUETOOTH_QCOM := true
 BLUETOOTH_HCI_USE_MCT := true
 
 # Camera
-BOARD_GLOBAL_CFLAGS += -DMETADATA_CAMERA_SOURCE
 TARGET_HAS_LEGACY_CAMERA_HAL1 := true
 TARGET_NEEDS_GCC_LIBC := true
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
