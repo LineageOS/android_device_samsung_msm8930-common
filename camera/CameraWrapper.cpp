@@ -125,6 +125,7 @@ static char *camera_fixup_getparams(int id, const char *settings)
 
     params.set(android::CameraParameters::KEY_SUPPORTED_ISO_MODES, iso_values[id]);
     params.set(android::CameraParameters::KEY_PREFERRED_PREVIEW_SIZE_FOR_VIDEO, "1280x720");
+    params.set(android::CameraParameters::KEY_SUPPORTED_SCENE_MODES, "auto");
 
 #ifdef FFC_PICTURE_FIXUP
     if (id == 1) {
