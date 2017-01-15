@@ -44,9 +44,6 @@ OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
 
-# Include an expanded selection of fonts
-EXTENDED_FONT_FOOTPRINT := true
-
 # Bootanimation
 TARGET_BOOTANIMATION_MULTITHREAD_DECODE := true
 
