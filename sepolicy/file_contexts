@@ -1,37 +1,28 @@
-/efs/bluetooth(/.*)?		u:object_r:bluetooth_efs_file:s0
-/efs/wifi(/.*)?			u:object_r:wifi_efs_file:s0
+/data/cam_socket(.*)                                             u:object_r:camera_socket:s0
+/data/data/com.android.providers.telephony/databases(/.*)?       u:object_r:radio_data_file:s0
+/data/data/com.android.providers.telephony/shared_prefs(/.*)?    u:object_r:radio_data_file:s0
+/data/system/default_values                                      u:object_r:mpctl_data_file:s0
+/data/system/yas-backup.cfg                                      u:object_r:geomagneticd_data_file:s0
+/data/system/yas.cfg                                             u:object_r:geomagneticd_data_file:s0
 
-# Block labeling
-/dev/block/platform/msm_sdcc\.1/by-name/efs				u:object_r:efs_block_device:s0
-/dev/block/platform/msm_sdcc\.1/by-name/persist				u:object_r:persist_block_device:s0
-/dev/block/platform/msm_sdcc\.1/by-name/modem				u:object_r:modem_efs_partition_device:s0
-/dev/block/platform/msm_sdcc\.1/by-name/pad				u:object_r:misc_block_device:s0
+/dev/alps_io                                                     u:object_r:sensors_device:s0
+/dev/audience_a2220                                              u:object_r:audio_device:s0
+/dev/bcm2079x                                                    u:object_r:nfc_device:s0
+/dev/block/platform/msm_sdcc\.1/by-name/efs                      u:object_r:efs_block_device:s0
+/dev/block/platform/msm_sdcc\.1/by-name/modem                    u:object_r:modem_efs_partition_device:s0
+/dev/block/platform/msm_sdcc\.1/by-name/pad                      u:object_r:misc_block_device:s0
+/dev/block/platform/msm_sdcc\.1/by-name/persist                  u:object_r:persist_block_device:s0
+/dev/gemini.*                                                    u:object_r:camera_device:s0
+/dev/pn547                                                       u:object_r:nfc_device:s0
+/dev/socket/mpctl                                                u:object_r:mpctl_socket:s0
 
-/dev/audience_a2220		u:object_r:audio_device:s0
+/efs/bluetooth(/.*)?                                             u:object_r:bluetooth_efs_file:s0
+/efs/wifi(/.*)?                                                  u:object_r:wifi_efs_file:s0
 
-/data/cam_socket(.*)		u:object_r:camera_socket:s0
-/dev/gemini.*			u:object_r:camera_device:s0
+/sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/gpuclk            u:object_r:sysfs_thermal:s0
+/sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/max_gpuclk        u:object_r:sysfs_thermal:s0
+/sys/devices/virtual/misc/backlightnotification(/.*)?            u:object_r:sysfs_bln:s0
+/sys/devices/virtual/sec/sec_touchkey/touchkey_enable            u:object_r:sysfs_keypad:s0
 
-/data/system/default_values	u:object_r:mpctl_data_file:s0
-
-/data/system/yas.cfg		u:object_r:geomagneticd_data_file:s0
-/data/system/yas-backup.cfg	u:object_r:geomagneticd_data_file:s0
-
-/data/data/com.android.providers.telephony/databases(/.*)?         u:object_r:radio_data_file:s0
-/data/data/com.android.providers.telephony/shared_prefs(/.*)?      u:object_r:radio_data_file:s0
-
-/dev/bcm2079x			u:object_r:nfc_device:s0
-/dev/pn547			u:object_r:nfc_device:s0
-
-/dev/socket/mpctl		u:object_r:mpctl_socket:s0
-
-/dev/alps_io			u:object_r:sensors_device:s0
-
-/system/bin/insthk		u:object_r:insthk_exec:s0
-/system/bin/geomagneticd	u:object_r:geomagneticd_exec:s0
-
-/sys/devices/virtual/misc/backlightnotification(/.*)?	u:object_r:sysfs_bln:s0
-/sys/devices/virtual/sec/sec_touchkey/touchkey_enable	u:object_r:sysfs_keypad:s0
-
-/sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/gpuclk               u:object_r:sysfs_thermal:s0
-/sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/max_gpuclk           u:object_r:sysfs_thermal:s0
+/system/bin/geomagneticd                                         u:object_r:geomagneticd_exec:s0
+/system/bin/insthk                                               u:object_r:insthk_exec:s0

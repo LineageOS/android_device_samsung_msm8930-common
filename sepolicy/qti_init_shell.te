@@ -3,8 +3,8 @@ allow qti_init_shell apk_data_file:dir { write add_name };
 allow qti_init_shell apk_data_file:file { create write };
 
 # For bluetooth mac address loading
-allow qti_init_shell efs_file:dir search;
 allow qti_init_shell bluetooth_efs_file:dir search;
 allow qti_init_shell bluetooth_efs_file:file r_file_perms;
 allow qti_init_shell bluetooth_loader_exec:file r_file_perms;
+allow qti_init_shell efs_file:dir search;
 allow qti_init_shell hci_attach_dev:chr_file rw_file_perms;
