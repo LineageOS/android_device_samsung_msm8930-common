@@ -22,6 +22,7 @@ TARGET_CPU_VARIANT := krait
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
+USE_CUSTOM_AUDIO_POLICY := 1
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
