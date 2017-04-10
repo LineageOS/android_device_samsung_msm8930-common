@@ -3,6 +3,7 @@ type insthk_exec, exec_type, file_type;
 init_daemon_domain(insthk)
 
 allow insthk efs_file:dir search;
+allow insthk firmware_file:dir search;
 allow insthk self:capability dac_override;
 allow insthk system_file:file execmod;
 allow insthk tee_device:chr_file rw_file_perms;
