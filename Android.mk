@@ -107,6 +107,18 @@ $(WCNSS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 
 ALL_DEFAULT_INSTALLED_MODULES += $(WCNSS_SYMLINKS)
 
+SSHDCPAP_IMAGES := \
+    sshdcpap.b00 sshdcpap.b01 sshdcpap.b02 sshdcpap.b03 sshdcpap.mdt
+
+SSHDCPAP_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(SSHDCPAP_IMAGES)))
+$(SSHDCPAP_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+	@echo "SSHDCPAP firmware link: $@"
+	@mkdir -p $(dir $@)
+	@rm -rf $@
+	$(hide) ln -sf /firmware/image/$(notdir $@) $@
+
+ALL_DEFAULT_INSTALLED_MODULES += $(SSHDCPAP_SYMLINKS)
+
 $(shell mkdir -p $(TARGET_OUT_ETC)/firmware/wlan/prima; \
 	ln -sf /data/misc/wifi/WCNSS_qcom_cfg.ini \
 		$(TARGET_OUT_ETC)/firmware/wlan/prima/WCNSS_qcom_cfg.ini)
