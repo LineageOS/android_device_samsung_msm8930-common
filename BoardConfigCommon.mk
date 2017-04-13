@@ -43,9 +43,6 @@ NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 # Renderscript
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
-# Lights
-TARGET_PROVIDES_LIBLIGHT := true
-
 # Bootanimation
 TARGET_BOOTANIMATION_MULTITHREAD_DECODE := true
 
