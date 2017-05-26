@@ -21,6 +21,7 @@
 
 /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/gpuclk            u:object_r:sysfs_thermal:s0
 /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/max_gpuclk        u:object_r:sysfs_thermal:s0
+/sys/devices/platform/msm_ssbi.0/pm8921-core/pm8921-charger/power_supply/battery(/.*)?    u:object_r:sysfs_battery_supply:s0
 /sys/devices/virtual/misc/backlightnotification(/.*)?            u:object_r:sysfs_bln:s0
 /sys/devices/virtual/sec/sec_touchkey/touchkey_enable            u:object_r:sysfs_keypad:s0
 
