@@ -1,9 +1,5 @@
-/data/cam_socket(.*)                                             u:object_r:camera_socket:s0
 /data/data/com.android.providers.telephony/databases(/.*)?       u:object_r:radio_data_file:s0
 /data/data/com.android.providers.telephony/shared_prefs(/.*)?    u:object_r:radio_data_file:s0
-/data/system/default_values                                      u:object_r:mpctl_data_file:s0
-/data/system/yas-backup.cfg                                      u:object_r:geomagneticd_data_file:s0
-/data/system/yas.cfg                                             u:object_r:geomagneticd_data_file:s0
 
 /dev/alps_io                                                     u:object_r:sensors_device:s0
 /dev/audience_a2220                                              u:object_r:audio_device:s0
