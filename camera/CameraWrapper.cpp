@@ -110,8 +110,7 @@ const static char* iso_values[] = {
 #ifdef ISO_MODE_1600
     ",ISO1600"
 #endif
-    ,
-    "auto"};
+};
 
 static char* camera_fixup_getparams(int id, const char* settings) {
     android::CameraParameters params;
@@ -190,7 +189,9 @@ static char* camera_fixup_setparams(struct camera_device* device, const char* se
 
     if (params.get("iso")) {
         const char* isoMode = params.get(android::CameraParameters::KEY_ISO_MODE);
-        if (strcmp(isoMode, "ISO100") == 0)
+        if (strcmp(isoMode, "ISO50") == 0)
+            params.set(android::CameraParameters::KEY_ISO_MODE, "50");
+        else if (strcmp(isoMode, "ISO100") == 0)
             params.set(android::CameraParameters::KEY_ISO_MODE, "100");
         else if (strcmp(isoMode, "ISO200") == 0)
             params.set(android::CameraParameters::KEY_ISO_MODE, "200");
@@ -200,8 +201,6 @@ static char* camera_fixup_setparams(struct camera_device* device, const char* se
             params.set(android::CameraParameters::KEY_ISO_MODE, "800");
         else if (strcmp(isoMode, "ISO1600") == 0)
             params.set(android::CameraParameters::KEY_ISO_MODE, "1600");
-        else if (strcmp(isoMode, "ISO50") == 0)
-            params.set(android::CameraParameters::KEY_ISO_MODE, "50");
     }
 
 #ifdef SAMSUNG_CAMERA_MODE
