@@ -20,12 +20,6 @@
 TARGET_BOARD_PLATFORM := msm8960
 TARGET_CPU_VARIANT := krait
 
-# Configure jemalloc for a low memory device. This is needed
-# for us as it disables tcache, which is breaking camera.
-# Also, for Android 7.1 we need to set decay time to 0.
-MALLOC_SVELTE := true
-BOARD_GLOBAL_CFLAGS += -DDECAY_TIME_DEFAULT=0
-
 # Don't try to build and run all tests by default. Several tests have
 # dependencies on the framework.
 ANDROID_NO_TEST_CHECK := true
@@ -38,6 +32,8 @@ USE_CUSTOM_AUDIO_POLICY := 1
 BOARD_HAVE_BLUETOOTH_QCOM := true
 
 # Camera
+BOARD_GLOBAL_CFLAGS += -DDECAY_TIME_DEFAULT=0
+MALLOC_SVELTE := true
 TARGET_HAS_LEGACY_CAMERA_HAL1 := true
 TARGET_NEEDS_GCC_LIBC := true
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
