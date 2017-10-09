@@ -13,11 +13,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+PLATFORM_PATH := device/samsung/msm8930-common
+
 # inherit from qcom-common
 -include device/samsung/qcom-common/BoardConfigCommon.mk
 
 # Includes
-TARGET_SPECIFIC_HEADER_PATH := device/samsung/msm8930-common/include
+TARGET_SPECIFIC_HEADER_PATH := $(PLATFORM_PATH)/include
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8960
@@ -65,4 +67,4 @@ WIFI_DRIVER_FW_PATH_AP           := "ap"
 
 # Include SE policies
 include device/qcom/sepolicy/sepolicy.mk
-BOARD_SEPOLICY_DIRS += device/samsung/msm8930-common/sepolicy
+BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy
