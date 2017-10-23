@@ -49,6 +49,9 @@ USE_DEVICE_SPECIFIC_CAMERA := true
 BOARD_CHARGING_CMDLINE_NAME := "androidboot.bootchg"
 BOARD_CHARGING_CMDLINE_VALUE := "true"
 
+# Display
+TARGET_DISPLAY_USE_RETIRE_FENCE := true
+
 # Renderscript
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
