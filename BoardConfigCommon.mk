@@ -32,6 +32,9 @@ TARGET_USES_64_BIT_BINDER := true
 # dependencies on the framework.
 ANDROID_NO_TEST_CHECK := true
 
+# Reduce system image size by limiting java debug info.
+PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
+
 # Audio
 BOARD_USES_ALSA_AUDIO := true
 USE_CUSTOM_AUDIO_POLICY := 1
