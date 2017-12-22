@@ -4,3 +4,4 @@ allow init debugfs:file write;
 allow init diag_device:chr_file unlink;
 allow init labeledfs:filesystem associate;
 allow init system_file:file execmod;
+set_prop(init, wcnss_prop)
