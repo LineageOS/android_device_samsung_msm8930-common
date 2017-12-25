@@ -65,6 +65,8 @@ BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
 TARGET_PROVIDES_WCNSS_QMI        := true
 TARGET_USES_QCOM_WCNSS_QMI       := true
 WPA_SUPPLICANT_VERSION           := VER_0_8_X
+WIFI_DRIVER_MODULE_PATH          := "/vendor/lib/modules/wlan.ko"
+WIFI_DRIVER_MODULE_NAME          := "wlan"
 WIFI_DRIVER_FW_PATH_STA          := "sta"
 WIFI_DRIVER_FW_PATH_AP           := "ap"
 
