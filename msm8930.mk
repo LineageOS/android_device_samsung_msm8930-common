@@ -69,11 +69,6 @@ PRODUCT_PACKAGES += \
     hwcomposer.msm8960 \
     memtrack.msm8960
 
-# Power
-PRODUCT_PACKAGES += \
-    android.hardware.power@1.0-impl \
-    power.msm8960
-
 # Media
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
