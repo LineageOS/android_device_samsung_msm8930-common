@@ -53,6 +53,9 @@ OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 # Suppress EMMC WIPE
 BOARD_SUPPRESS_EMMC_WIPE := true
 
+# Filesystem
+TARGET_EXFAT_DRIVER := exfat
+
 # Wifi driver
 BOARD_HAS_QCOM_WLAN              := true
 BOARD_WLAN_DEVICE                := qcwcn
