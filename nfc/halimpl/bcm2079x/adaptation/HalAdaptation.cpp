@@ -61,8 +61,6 @@ static void BroadcomHalDataCallback(uint16_t data_len, uint8_t* p_data);
 static bool isColdBoot = true;
 
 extern tNFC_HAL_CFG* p_nfc_hal_cfg;
-extern const uint8_t nfca_version_string[];
-extern const uint8_t nfa_version_string[];
 
 tNFC_HAL_DM_PRE_SET_MEM nfc_hal_pre_set_mem_20795a1[] = {
     {0x0016403c, 0x00000008},
@@ -76,7 +74,6 @@ extern tNFC_HAL_DM_PRE_SET_MEM* p_nfc_hal_dm_pre_set_mem;
 
 int HaiInitializeLibrary(const bcm2079x_dev_t* device) {
   ALOGD("%s: enter", __func__);
-  ALOGE("%s: ver=%s nfa=%s", __func__, nfca_version_string, nfa_version_string);
   int retval = EACCES;
   unsigned long freq = 0;
   unsigned long num = 0;
