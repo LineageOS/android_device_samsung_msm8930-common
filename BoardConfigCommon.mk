@@ -52,9 +52,6 @@ TARGET_DISPLAY_USE_RETIRE_FENCE := true
 # Renderscript
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
-# Suppress EMMC WIPE
-BOARD_SUPPRESS_EMMC_WIPE := true
-
 # Filesystem
 TARGET_EXFAT_DRIVER := exfat
 
