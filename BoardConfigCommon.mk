@@ -56,9 +56,6 @@ TARGET_PROVIDES_CAMERA_HAL := true
 TARGET_SPECIFIC_CAMERA_PARAMETER_LIBRARY := libcamera_parameters_ext
 USE_DEVICE_SPECIFIC_CAMERA := true
 
-# Display
-TARGET_DISPLAY_USE_RETIRE_FENCE := true
-
 # Renderscript
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
