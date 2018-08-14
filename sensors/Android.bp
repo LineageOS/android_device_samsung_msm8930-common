@@ -43,8 +43,9 @@ cc_library_shared {
 
 cc_binary {
     name: "android.hardware.sensors@1.0-service.samsung8930",
-    relative_install_path: "hw",
+    defaults: ["hidl_defaults"],
     vendor: true,
+    relative_install_path: "hw",
     init_rc: ["android.hardware.sensors@1.0-service.samsung8930.rc"],
     srcs: ["service.cpp"],
     shared_libs: [
@@ -56,4 +57,9 @@ cc_binary {
         "libhardware",
         "android.hardware.sensors@1.0",
     ],
+    arch: {
+        arm: {
+            cflags: ["-DARCH_ARM_32"],
+        },
+    },
 }
