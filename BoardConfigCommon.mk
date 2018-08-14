@@ -19,7 +19,7 @@ PLATFORM_PATH := device/samsung/msm8930-common
 -include device/samsung/qcom-common/BoardConfigCommon.mk
 
 # Includes
-TARGET_SPECIFIC_HEADER_PATH := $(PLATFORM_PATH)/include
+#TARGET_SPECIFIC_HEADER_PATH := $(PLATFORM_PATH)/include
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8960
@@ -55,7 +55,7 @@ BOARD_HAVE_BLUETOOTH_QCOM := true
 TARGET_HAS_LEGACY_CAMERA_HAL1 := true
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
 TARGET_PROVIDES_CAMERA_HAL := true
-TARGET_SPECIFIC_CAMERA_PARAMETER_LIBRARY := libcamera_parameters_ext
+#TARGET_SPECIFIC_CAMERA_PARAMETER_LIBRARY := libcamera_parameters_ext
 USE_DEVICE_SPECIFIC_CAMERA := true
 
 # Display
