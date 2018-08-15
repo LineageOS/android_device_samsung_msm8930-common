@@ -31,10 +31,11 @@
 #include <camera/CameraParameters.h>
 #include <hardware/camera.h>
 #include <hardware/hardware.h>
-#include <utils/String8.h>
 #include <utils/threads.h>
 
-static android::Mutex gCameraWrapperLock;
+using namespace android;
+
+static Mutex gCameraWrapperLock;
 static camera_module_t* gVendorModule = 0;
 
 static char** fixed_set_params = NULL;
@@ -139,30 +140,30 @@ const static char* iso_values[] = {
 };
 
 static char* camera_fixup_getparams(int id, const char* settings) {
-    android::CameraParameters params;
-    params.unflatten(android::String8(settings));
+    CameraParameters params;
+    params.unflatten(String8(settings));
 
 #if !LOG_NDEBUG
     ALOGV("%s: original parameters:", __FUNCTION__);
     params.dump();
 #endif
 
-    params.set(android::CameraParameters::KEY_SUPPORTED_ISO_MODES, iso_values[id]);
-    params.set(android::CameraParameters::KEY_PREFERRED_PREVIEW_SIZE_FOR_VIDEO, "1280x720");
-    params.set(android::CameraParameters::KEY_SUPPORTED_SCENE_MODES,
+    params.set(CameraParameters::KEY_SUPPORTED_ISO_MODES, iso_values[id]);
+    params.set(CameraParameters::KEY_PREFERRED_PREVIEW_SIZE_FOR_VIDEO, "1280x720");
+    params.set(CameraParameters::KEY_SUPPORTED_SCENE_MODES,
                "auto,asd,action,portrait,landscape,night,night-portrait,theatre,beach,snow,sunset,"
                "steadyphoto,fireworks,sports,party,candlelight,backlight,flowers,AR");
 
 #ifdef FFC_PICTURE_FIXUP
     if (id == 1) {
-        params.set(android::CameraParameters::KEY_SUPPORTED_PICTURE_SIZES,
+        params.set(CameraParameters::KEY_SUPPORTED_PICTURE_SIZES,
                    "1392x1392,1280x720,640x480");
     }
 #endif
 #ifdef FFC_VIDEO_FIXUP
     if (id == 1) {
-        if (!params.get(android::CameraParameters::KEY_SUPPORTED_VIDEO_SIZES)) {
-            params.set(android::CameraParameters::KEY_SUPPORTED_VIDEO_SIZES,
+        if (!params.get(CameraParameters::KEY_SUPPORTED_VIDEO_SIZES)) {
+            params.set(CameraParameters::KEY_SUPPORTED_VIDEO_SIZES,
                        "1280x720,640x480,320x240,176x144");
         }
     }
@@ -173,13 +174,13 @@ static char* camera_fixup_getparams(int id, const char* settings) {
     /* Disable face detection for front facing camera */
     if (id == 1) {
 #endif
-        params.remove(android::CameraParameters::KEY_QC_FACE_RECOGNITION);
-        params.remove(android::CameraParameters::KEY_QC_SUPPORTED_FACE_RECOGNITION);
-        params.remove(android::CameraParameters::KEY_QC_SUPPORTED_FACE_RECOGNITION_MODES);
-        params.remove(android::CameraParameters::KEY_QC_FACE_DETECTION);
-        params.remove(android::CameraParameters::KEY_QC_SUPPORTED_FACE_DETECTION);
-        params.remove(android::CameraParameters::KEY_FACE_DETECTION);
-        params.remove(android::CameraParameters::KEY_SUPPORTED_FACE_DETECTION);
+        params.remove(CameraParameters::KEY_QC_FACE_RECOGNITION);
+        params.remove(CameraParameters::KEY_QC_SUPPORTED_FACE_RECOGNITION);
+        params.remove(CameraParameters::KEY_QC_SUPPORTED_FACE_RECOGNITION_MODES);
+        params.remove(CameraParameters::KEY_QC_FACE_DETECTION);
+        params.remove(CameraParameters::KEY_QC_SUPPORTED_FACE_DETECTION);
+        params.remove(CameraParameters::KEY_FACE_DETECTION);
+        params.remove(CameraParameters::KEY_SUPPORTED_FACE_DETECTION);
 #ifndef DISABLE_FACE_DETECTION_BOTH_CAMERAS
     }
 #endif
@@ -190,7 +191,7 @@ static char* camera_fixup_getparams(int id, const char* settings) {
     params.dump();
 #endif
 
-    android::String8 strParams = params.flatten();
+    String8 strParams = params.flatten();
     char* ret = strdup(strParams.string());
 
     return ret;
@@ -200,11 +201,11 @@ static bool wasVideo = false;
 
 static char* camera_fixup_setparams(struct camera_device* device, const char* settings) {
     int id = CAMERA_ID(device);
-    android::CameraParameters params;
-    params.unflatten(android::String8(settings));
-    const char* camMode = params.get(android::CameraParameters::KEY_SAMSUNG_CAMERA_MODE);
+    CameraParameters params;
+    params.unflatten(String8(settings));
+    const char* camMode = params.get(CameraParameters::KEY_SAMSUNG_CAMERA_MODE);
 
-    const char* recordingHint = params.get(android::CameraParameters::KEY_RECORDING_HINT);
+    const char* recordingHint = params.get(CameraParameters::KEY_RECORDING_HINT);
     bool isVideo = false;
     if (recordingHint) isVideo = !strcmp(recordingHint, "true");
 
@@ -214,19 +215,19 @@ static char* camera_fixup_setparams(struct camera_device* device, const char* se
 #endif
 
     if (params.get("iso")) {
-        const char* isoMode = params.get(android::CameraParameters::KEY_ISO_MODE);
+        const char* isoMode = params.get(CameraParameters::KEY_ISO_MODE);
         if (strcmp(isoMode, "ISO50") == 0)
-            params.set(android::CameraParameters::KEY_ISO_MODE, "50");
+            params.set(CameraParameters::KEY_ISO_MODE, "50");
         else if (strcmp(isoMode, "ISO100") == 0)
-            params.set(android::CameraParameters::KEY_ISO_MODE, "100");
+            params.set(CameraParameters::KEY_ISO_MODE, "100");
         else if (strcmp(isoMode, "ISO200") == 0)
-            params.set(android::CameraParameters::KEY_ISO_MODE, "200");
+            params.set(CameraParameters::KEY_ISO_MODE, "200");
         else if (strcmp(isoMode, "ISO400") == 0)
-            params.set(android::CameraParameters::KEY_ISO_MODE, "400");
+            params.set(CameraParameters::KEY_ISO_MODE, "400");
         else if (strcmp(isoMode, "ISO800") == 0)
-            params.set(android::CameraParameters::KEY_ISO_MODE, "800");
+            params.set(CameraParameters::KEY_ISO_MODE, "800");
         else if (strcmp(isoMode, "ISO1600") == 0)
-            params.set(android::CameraParameters::KEY_ISO_MODE, "1600");
+            params.set(CameraParameters::KEY_ISO_MODE, "1600");
     }
 
 #ifdef SAMSUNG_CAMERA_MODE
@@ -236,16 +237,16 @@ static char* camera_fixup_setparams(struct camera_device* device, const char* se
         if (!(!strcmp(camMode, "1") && !isVideo) || wasVideo) {
             /* Enable only if not already set (Snapchat) but do enable if the setting is left
                over while switching from stills to video */
-            if ((!strcmp(params.get(android::CameraParameters::KEY_PREVIEW_FRAME_RATE), "15") ||
-                 (!strcmp(params.get(android::CameraParameters::KEY_PREVIEW_SIZE), "320x240") &&
-                  !strcmp(params.get(android::CameraParameters::KEY_JPEG_QUALITY), "96"))) &&
+            if ((!strcmp(params.get(CameraParameters::KEY_PREVIEW_FRAME_RATE), "15") ||
+                 (!strcmp(params.get(CameraParameters::KEY_PREVIEW_SIZE), "320x240") &&
+                  !strcmp(params.get(CameraParameters::KEY_JPEG_QUALITY), "96"))) &&
                 !isVideo) {
                 /* Do not set for video chat in Hangouts (Frame rate 15) or Skype (Preview size
                    320x240 and jpeg quality 96 */
             } else {
                 /* "Normal case". Required to prevent distorted video and reboots
                    while taking snaps */
-                params.set(android::CameraParameters::KEY_SAMSUNG_CAMERA_MODE, isVideo ? "1" : "0");
+                params.set(CameraParameters::KEY_SAMSUNG_CAMERA_MODE, isVideo ? "1" : "0");
             }
             wasVideo = (isVideo || wasVideo);
         }
@@ -255,8 +256,8 @@ static char* camera_fixup_setparams(struct camera_device* device, const char* se
 #endif
 #ifdef ENABLE_ZSL
     if (id != 1) {
-        params.set(android::CameraParameters::KEY_ZSL, isVideo ? "off" : "on");
-        params.set(android::CameraParameters::KEY_CAMERA_MODE, isVideo ? "0" : "1");
+        params.set(CameraParameters::KEY_ZSL, isVideo ? "off" : "on");
+        params.set(CameraParameters::KEY_CAMERA_MODE, isVideo ? "0" : "1");
     }
 #endif
 
@@ -265,7 +266,7 @@ static char* camera_fixup_setparams(struct camera_device* device, const char* se
     params.dump();
 #endif
 
-    android::String8 strParams = params.flatten();
+    String8 strParams = params.flatten();
 
     if (fixed_set_params[id]) free(fixed_set_params[id]);
     fixed_set_params[id] = strdup(strParams.string());
@@ -526,7 +527,7 @@ static int camera_device_close(hw_device_t* device) {
 
     ALOGV("%s", __FUNCTION__);
 
-    android::Mutex::Autolock lock(gCameraWrapperLock);
+    Mutex::Autolock lock(gCameraWrapperLock);
 
     if (!device) {
         ret = -EINVAL;
@@ -576,7 +577,7 @@ static int camera_device_open(const hw_module_t* module, const char* name, hw_de
     camera_device_ops_t* camera_ops = NULL;
     wasVideo = false;
 
-    android::Mutex::Autolock lock(gCameraWrapperLock);
+    Mutex::Autolock lock(gCameraWrapperLock);
 
     ALOGV("%s", __FUNCTION__);
 
