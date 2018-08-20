@@ -21,8 +21,7 @@ LOCAL_MODULE := nfc_nci.bcm2079x.$(TARGET_BOARD_PLATFORM)
 
 LOCAL_SRC_FILES := \
     $(call all-c-files-under, $(HALIMPL)) \
-    $(call all-cpp-files-under, $(HALIMPL)) \
-    src/adaptation/CrcChecksum.cpp
+    $(call all-cpp-files-under, $(HALIMPL))
 
 LOCAL_SHARED_LIBRARIES := \
     libcutils \
