@@ -1,7 +1,7 @@
 LOCAL_PATH := $(call my-dir)
 
-HAL      := src/hal
-UDRV     := src/udrv
+HAL      := halimpl/bcm2079x/hal
+UDRV     := halimpl/bcm2079x/udrv
 HALIMPL  := halimpl/bcm2079x
 D_CFLAGS := \
     -DANDROID -DBUILDCFG=1 \
@@ -39,7 +39,6 @@ LOCAL_C_INCLUDES := \
     $(LOCAL_PATH)/$(HALIMPL)/gki/common \
     $(LOCAL_PATH)/$(HAL)/include \
     $(LOCAL_PATH)/$(HAL)/int \
-    $(LOCAL_PATH)/src/include \
     $(LOCAL_PATH)/$(UDRV)/include
 
 LOCAL_CFLAGS := \
