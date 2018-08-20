@@ -111,11 +111,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-impl
 
-# Bluetooth
-PRODUCT_PACKAGES += \
-    android.hardware.bluetooth@1.0-impl \
-    libbt-vendor
-
 # USB
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
