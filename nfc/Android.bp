@@ -29,8 +29,6 @@ cc_library_shared {
         "halimpl/bcm2079x/adaptation",
         "src/hal/include",
         "src/hal/int",
-        "src/nfc/include",
-        "src/nfa/include",
         "src/udrv/include",
         "src/include",
     ],
