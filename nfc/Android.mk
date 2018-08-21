@@ -7,7 +7,10 @@ D_CFLAGS := \
     -DANDROID -DBUILDCFG=1 \
     -Wno-deprecated-register \
     -Wno-unused-parameter \
-    -Wno-missing-field-initializers
+    -Wno-missing-field-initializers \
+    -Wno-unused-function \
+    -Wno-unused-variable \
+    -Wno-macro-redefined
 
 include $(CLEAR_VARS)
 
