@@ -33,7 +33,7 @@ MODEM_IMAGES := \
     modem.b00 modem.b01 modem.b02 modem.b03 modem.b04 modem.b05 \
     modem.b06 modem.b07 modem.b08 modem.b09 modem.b10 modem.mdt
 
-MODEM_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(MODEM_IMAGES)))
+MODEM_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/firmware/,$(notdir $(MODEM_IMAGES)))
 $(MODEM_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "Modem firmware link: $@"
 	@mkdir -p $(dir $@)
@@ -49,7 +49,7 @@ MODEM_FW_IMAGES := \
     modem_fw.b23 modem_fw.b24 modem_fw.b25 modem_fw.b27 modem_fw.b28 \
     modem_fw.b31 modem_fw.fli modem_fw.mdt
 
-MODEM_FW_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(MODEM_FW_IMAGES)))
+MODEM_FW_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/firmware/,$(notdir $(MODEM_FW_IMAGES)))
 $(MODEM_FW_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "Modem firmware link: $@"
 	@mkdir -p $(dir $@)
@@ -61,7 +61,7 @@ ALL_DEFAULT_INSTALLED_MODULES += $(MODEM_FW_SYMLINKS)
 Q6_IMAGES := \
     q6.b00 q6.b01 q6.b03 q6.b04 q6.b05 q6.b06 q6.mdt
 
-Q6_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(Q6_IMAGES)))
+Q6_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/firmware/,$(notdir $(Q6_IMAGES)))
 $(Q6_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "Q6 firmware link: $@"
 	@mkdir -p $(dir $@)
@@ -73,7 +73,7 @@ ALL_DEFAULT_INSTALLED_MODULES += $(Q6_SYMLINKS)
 TZAPPS_IMAGES := \
     tzapps.b00 tzapps.b01 tzapps.b02 tzapps.b03 tzapps.mdt
 
-TZAPPS_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(TZAPPS_IMAGES)))
+TZAPPS_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/firmware/,$(notdir $(TZAPPS_IMAGES)))
 $(TZAPPS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "TZAPPS firmware link: $@"
 	@mkdir -p $(dir $@)
@@ -85,7 +85,7 @@ ALL_DEFAULT_INSTALLED_MODULES += $(TZAPPS_SYMLINKS)
 VIDC_IMAGES := \
     vidc.b00 vidc.b01 vidc.b02 vidc.b03 vidc.mdt
 
-VIDC_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(VIDC_IMAGES)))
+VIDC_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/firmware/,$(notdir $(VIDC_IMAGES)))
 $(VIDC_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "VIDC firmware link: $@"
 	@mkdir -p $(dir $@)
@@ -98,7 +98,7 @@ WCNSS_IMAGES := \
     wcnss.b00 wcnss.b01 wcnss.b02 wcnss.b04 wcnss.b05 \
     wcnss.b06 wcnss.mdt
 
-WCNSS_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(WCNSS_IMAGES)))
+WCNSS_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/firmware/,$(notdir $(WCNSS_IMAGES)))
 $(WCNSS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "WCNSS firmware link: $@"
 	@mkdir -p $(dir $@)
@@ -110,7 +110,7 @@ ALL_DEFAULT_INSTALLED_MODULES += $(WCNSS_SYMLINKS)
 SSHDCPAP_IMAGES := \
     sshdcpap.b00 sshdcpap.b01 sshdcpap.b02 sshdcpap.b03 sshdcpap.mdt
 
-SSHDCPAP_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(SSHDCPAP_IMAGES)))
+SSHDCPAP_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/firmware/,$(notdir $(SSHDCPAP_IMAGES)))
 $(SSHDCPAP_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "SSHDCPAP firmware link: $@"
 	@mkdir -p $(dir $@)
@@ -123,11 +123,11 @@ $(shell mkdir -p $(TARGET_OUT_VENDOR)/firmware/wlan/prima; \
 	ln -sf /vendor/etc/wifi/WCNSS_qcom_cfg.ini \
 		$(TARGET_OUT_VENDOR)/firmware/wlan/prima/WCNSS_qcom_cfg.ini)
 
-$(shell mkdir -p $(TARGET_OUT_ETC)/firmware/wcd9310; \
+$(shell mkdir -p $(TARGET_OUT_VENDOR)/firmware/wcd9310; \
 	ln -sf /data/misc/audio/wcd9310_anc.bin \
-		$(TARGET_OUT_ETC)/firmware/wcd9310/wcd9310_anc.bin; \
+		$(TARGET_OUT_VENDOR)/firmware/wcd9310/wcd9310_anc.bin; \
 	ln -sf /data/misc/audio/mbhc.bin \
-		$(TARGET_OUT_ETC)/firmware/wcd9310/wcd9310_mbhc.bin)
+		$(TARGET_OUT_VENDOR)/firmware/wcd9310/wcd9310_mbhc.bin)
 endif
 endif
 endif
