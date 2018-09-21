@@ -104,8 +104,8 @@ PRODUCT_PACKAGES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
-    android.hardware.sensors@1.0-impl \
-    sensors.msm8960
+    android.hardware.sensors@1.0-impl.samsung8930 \
+    android.hardware.sensors@1.0-service.samsung8930
 
 # Keymaster
 PRODUCT_PACKAGES += \
