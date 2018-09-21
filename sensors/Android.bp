@@ -1,8 +1,5 @@
-soong_namespace {
-}
-
 cc_library_static {
-    name: "multihal-samsung",
+    name: "multihal-samsung8930",
     vendor: true,
     srcs: [
         "multihal.cpp",
@@ -22,7 +19,7 @@ cc_library_static {
 }
 
 cc_library_shared {
-    name: "android.hardware.sensors@1.0-impl",
+    name: "android.hardware.sensors@1.0-impl.samsung8930",
     defaults: ["hidl_defaults"],
     proprietary: true,
     relative_install_path: "hw",
@@ -39,16 +36,16 @@ cc_library_shared {
     ],
     static_libs: [
         "android.hardware.sensors@1.0-convert",
-        "multihal",
+        "multihal-samsung8930",
     ],
     local_include_dirs: ["include/sensors"],
 }
 
 cc_binary {
-    name: "android.hardware.sensors@1.0-service",
+    name: "android.hardware.sensors@1.0-service.samsung8930",
     relative_install_path: "hw",
     vendor: true,
-    init_rc: ["android.hardware.sensors@1.0-service.rc"],
+    init_rc: ["android.hardware.sensors@1.0-service.samsung8930.rc"],
     srcs: ["service.cpp"],
 
     shared_libs: [
