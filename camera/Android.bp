@@ -1,3 +1,6 @@
+soong_namespace {
+}
+
 cc_library_static {
     name: "libcamera_parameters_ext",
     include_dirs: ["device/samsung/msm8930-common/include"],
