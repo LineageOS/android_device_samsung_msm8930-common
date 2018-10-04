@@ -84,5 +84,6 @@ WIFI_DRIVER_FW_PATH_AP           := "ap"
 PRODUCT_VENDOR_MOVE_ENABLED := true
 
 # Include SE policies
-#include device/qcom/sepolicy/sepolicy.mk
-#BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy
+include device/qcom/sepolicy/sepolicy.mk
+include device/qcom/sepolicy/legacy-sepolicy.mk
+BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy

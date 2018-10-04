@@ -1,5 +1,5 @@
 type geomagneticd, domain;
-type geomagneticd_exec, exec_type, file_type;
+type geomagneticd_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(geomagneticd)
 
 type_transition geomagneticd system_data_file:file geomagneticd_data_file;
