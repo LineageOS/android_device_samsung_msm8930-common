@@ -9,3 +9,4 @@ allow mediaserver mnt_user_file:dir search;
 allow mediaserver storage_file:dir search;
 allow mediaserver storage_file:lnk_file read;
 allow mediaserver system_file:file execmod;
+allow mediaserver vendor_file:file execmod;
