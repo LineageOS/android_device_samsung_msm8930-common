@@ -62,7 +62,7 @@ TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
     /system/bin/mediaserver=22 \
     /system/vendor/bin/mm-qcamera-daemon=22
 TARGET_PROVIDES_CAMERA_HAL := true
-TARGET_SPECIFIC_CAMERA_PARAMETER_LIBRARY := libcamera_parameters_ext
+TARGET_SPECIFIC_CAMERA_PARAMETER_LIBRARY := camera_parameters_samsung_msm8930
 USE_DEVICE_SPECIFIC_CAMERA := true
 
 # Display
