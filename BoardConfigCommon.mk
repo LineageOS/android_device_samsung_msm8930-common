@@ -50,9 +50,6 @@ BOARD_CHARGING_CMDLINE_VALUE := "true"
 # Renderscript
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
-# Suppress EMMC WIPE
-BOARD_SUPPRESS_EMMC_WIPE := true
-
 # Wifi driver
 BOARD_HAS_QCOM_WLAN              := true
 BOARD_WLAN_DEVICE                := qcwcn
