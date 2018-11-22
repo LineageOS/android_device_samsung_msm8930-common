@@ -150,6 +150,9 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     wpa_supplicant.conf
 
+# Do not spin up a separate process for the network stack, use an in-process APK
+PRODUCT_PACKAGES += InProcessNetworkStack
+
 # Common overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
