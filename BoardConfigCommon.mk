@@ -28,6 +28,10 @@ TARGET_CPU_VARIANT := krait
 # Binder
 TARGET_USES_64_BIT_BINDER := true
 
+# HIDL
+DEVICE_MANIFEST_FILE := $(PLATFORM_PATH)/manifest.xml
+DEVICE_MATRIX_FILE := $(PLATFORM_PATH)/compatibility_matrix.xml
+
 # Exclude serif fonts for saving system.img size.
 EXCLUDE_SERIF_FONTS := true
 
