@@ -28,6 +28,10 @@ TARGET_CPU_VARIANT := krait
 # Binder
 TARGET_USES_64_BIT_BINDER := true
 
+# HIDL
+DEVICE_MANIFEST_FILE := $(PLATFORM_PATH)/manifest.xml
+DEVICE_MATRIX_FILE := $(PLATFORM_PATH)/compatibility_matrix.xml
+
 # Don't try to build and run all tests by default. Several tests have
 # dependencies on the framework.
 ANDROID_NO_TEST_CHECK := true
