@@ -35,10 +35,6 @@ DEVICE_MATRIX_FILE := $(PLATFORM_PATH)/compatibility_matrix.xml
 # Exclude serif fonts for saving system.img size.
 EXCLUDE_SERIF_FONTS := true
 
-# Don't try to build and run all tests by default. Several tests have
-# dependencies on the framework.
-ANDROID_NO_TEST_CHECK := true
-
 # Reduce system image size by limiting java debug info.
 PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 
