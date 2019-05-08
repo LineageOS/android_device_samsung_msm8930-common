@@ -7,11 +7,6 @@ allow untrusted_app sysfs_battery_supply:dir r_dir_perms;
 allow untrusted_app sysfs_battery_supply:file r_file_perms;
 allow untrusted_app tombstone_data_file:dir getattr;
 
-# backlight notification
-allow untrusted_app sysfs_bln:dir r_dir_perms;
-allow untrusted_app sysfs_bln:file rw_file_perms;
-allow untrusted_app sysfs_bln:lnk_file r_file_perms;
-
 # sdcardfs madness
 allow untrusted_app sdcard_posix:dir create_dir_perms;
 allow untrusted_app sdcard_posix:file create_file_perms;

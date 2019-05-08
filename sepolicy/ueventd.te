@@ -1,4 +1,5 @@
-allow ueventd sysfs_bln:file rw_file_perms;
 allow ueventd sysfs_keypad:file getattr;
 allow ueventd vfat:dir search;
-allow ueventd vfat:file { open read getattr };
+allow ueventd vfat:file r_file_perms;
+allow ueventd exfat:dir search;
+allow ueventd exfat:file r_file_perms;

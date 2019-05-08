@@ -1,9 +1,31 @@
-#domain_auto_trans(init, shell_exec, shell)                                
+domain_auto_trans(init, shell_exec, shell)
+
 allow init camera_socket:sock_file relabelto;
 allow init debugfs:dir mounton;
 allow init debugfs:file write;
 allow init diag_device:chr_file unlink;
 allow init labeledfs:filesystem associate;
 allow init system_file:file execmod;
-set_prop(init, wcnss_prop)
+allow init self:netlink_kobject_uevent_socket read;
+allow init self:netlink_socket read;
+allow init self:socket read;
+allow init socket_device:sock_file write;
+allow init sysfs:file { read write };
+allow init sysfs_devices_system_cpu:file write;
+allow init sysfs_lowmemorykiller:file { open write };
+allow init system_server:binder call;
+allow init vendor_toolbox_exec:file execute_no_trans;
+allow init sysfs:file { open setattr };
+allow init vendor_file:file execute_no_trans;
+allow init self:capability sys_nice;
+allow init sysfs_battery_supply:file setattr;
+allow init sysfs_thermal:file write;
+allow init self:netlink_kobject_uevent_socket create;
+allow init socket_device:sock_file create;
+allow init self:netlink_kobject_uevent_socket setopt;
+allow init socket_device:sock_file setattr;
+allow init sysfs_keypad:file setattr;
+allow init sysfs_sensors:lnk_file read;
+allow init self:netlink_kobject_uevent_socket bind;
 
+set_prop(init, vendor_wifi_prop)
