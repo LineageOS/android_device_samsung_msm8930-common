@@ -85,5 +85,5 @@ WITH_DEXPREOPT_DEBUG_INFO := false
 
 # Include SE policies
 include device/qcom/sepolicy-legacy/sepolicy.mk
-BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy/common
+BOARD_VENDOR_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy/common
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(PLATFORM_PATH)/sepolicy/private
