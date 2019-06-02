@@ -25,6 +25,7 @@ allow init socket_device:sock_file create;
 allow init self:netlink_kobject_uevent_socket setopt;
 allow init socket_device:sock_file setattr;
 allow init sysfs_keypad:file setattr;
+allow init sysfs_mdnie:file setattr;
 allow init sysfs_sensors:lnk_file read;
 allow init self:netlink_kobject_uevent_socket bind;
 
