@@ -1,15 +1,10 @@
-# For FM radio
 allow qti_init_shell apk_data_file:dir rw_dir_perms;
 allow qti_init_shell apk_data_file:file create_file_perms;
-
-# For bluetooth mac address loading
 allow qti_init_shell bluetooth_efs_file:dir search;
 allow qti_init_shell bluetooth_efs_file:file r_file_perms;
 allow qti_init_shell bluetooth_loader_exec:file rx_file_perms;
+allow qti_init_shell bluetooth_prop:property_service set;
 allow qti_init_shell efs_file:dir search;
 allow qti_init_shell hci_attach_dev:chr_file rw_file_perms;
-allow qti_init_shell bluetooth_prop:property_service set;
-
-# For audio script
 allow qti_init_shell toolbox_exec:file rx_file_perms;
 allow qti_init_shell vendor_file:file rx_file_perms;
