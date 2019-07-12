@@ -23,8 +23,8 @@
 /sys/devices/platform/mipi_samsung_oled.1281/lcd/panel/panel(/.*)?                                u:object_r:sysfs_graphics:s0
 /sys/devices/platform/msm_fb.525569/leds/lcd-backlight(/.*)?                                      u:object_r:sysfs_leds:s0
 /sys/devices/platform/msm_sdcc\.[0-9]/mmc_host/mmc[0-9]/mmc[0-9]:[0-9]+/block/mmcblk[0-9]/stat    u:object_r:sysfs_disk_stat:s0
-/sys/devices/platform/msm_ssbi.0/pm8921-core/pm8921-charger/power_supply/battery(/.*)?            u:object_r:sysfs_battery_supply:s0
-/sys/devices/platform/sec-battery/power_supply/battery(/.*)?                                      u:object_r:sysfs_battery_supply:s0
+/sys/devices/platform/msm_ssbi.0/pm8921-core/pm8921-charger/power_supply(/.*)?                    u:object_r:sysfs_batteryinfo:s0
+/sys/devices/platform/sec-battery/power_supply(/.*)?                                              u:object_r:sysfs_batteryinfo:s0
 /sys/devices/virtual/graphics/fb0/csc_cfg                                                         u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/mdnie/mdnie(/.*)?                                                            u:object_r:sysfs_mdnie:s0
 /sys/devices/virtual/sec/sec_touchkey/touchkey_enable                                             u:object_r:sysfs_keypad:s0

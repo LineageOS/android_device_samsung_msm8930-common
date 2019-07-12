@@ -11,7 +11,7 @@ allow init self:netlink_kobject_uevent_socket { bind create read setopt };
 allow init self:netlink_socket read;
 allow init self:socket read;
 allow init socket_device:sock_file create_file_perms;
-allow init sysfs_battery_supply:file setattr;
+allow init sysfs_batteryinfo:file setattr;
 allow init sysfs_cpu_boost:file rw_file_perms;
 allow init sysfs_devices_system_cpu:file w_file_perms;
 allow init sysfs:file { rw_file_perms setattr };
