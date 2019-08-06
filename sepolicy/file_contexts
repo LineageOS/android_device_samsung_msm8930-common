@@ -35,6 +35,7 @@
 /(vendor|system/vendor)/bin/thermald                                                   u:object_r:thermald_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.audio\.sh                                      u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.fm\.sh                                         u:object_r:qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.health@2\.0-service\.serrano         u:object_r:hal_health_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.serrano          u:object_r:hal_light_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.power@1\.0-service\.serrano          u:object_r:hal_power_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.sensors@1\.0-service\.samsung8930    u:object_r:hal_sensors_default_exec:s0
