@@ -26,6 +26,7 @@
 /sys/devices/platform/msm_sdcc\.[0-9]/mmc_host/mmc[0-9]/mmc[0-9]:[0-9]+/block/mmcblk[0-9]/stat    u:object_r:sysfs_disk_stat:s0
 /sys/devices/platform/msm_ssbi.0/pm8921-core/pm8921-charger/power_supply(/.*)?                    u:object_r:sysfs_batteryinfo:s0
 /sys/devices/platform/sec-battery/power_supply(/.*)?                                              u:object_r:sysfs_batteryinfo:s0
+/sys/devices/system/soc/soc0/id                                                                   u:object_r:sysfs_soc_id:s0
 /sys/devices/virtual/graphics/fb0/csc_cfg                                                         u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/mdnie/mdnie(/.*)?                                                            u:object_r:sysfs_mdnie:s0
 /sys/devices/virtual/sec/led(/.*)?                                                                u:object_r:sysfs_leds:s0
