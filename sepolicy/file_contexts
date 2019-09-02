@@ -14,7 +14,9 @@
 /dev/pn547                                          u:object_r:nfc_device:s0
 
 /efs/bluetooth(/.*)?    u:object_r:bluetooth_efs_file:s0
+/efs/imei(/.*)?         u:object_r:imei_efs_file:s0
 /efs/wifi(/.*)?         u:object_r:wifi_efs_file:s0
+/efs/FactoryApp(/.*)?   u:object_r:app_efs_file:s0
 
 /sys/class/mhl(/.*)?                                                                              u:object_r:sysfs_graphics:s0
 /sys/devices/platform/i2c-gpio.16/i2c-16/16-0020/leds/button-backlight(/.*)?                      u:object_r:sysfs_leds:s0
