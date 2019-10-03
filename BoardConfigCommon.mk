@@ -76,6 +76,7 @@ WIFI_DRIVER_MODULE_PATH          := "/vendor/lib/modules/wlan.ko"
 WIFI_DRIVER_MODULE_NAME          := "wlan"
 WIFI_DRIVER_FW_PATH_STA          := "sta"
 WIFI_DRIVER_FW_PATH_AP           := "ap"
+WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 
 # Move wcnss_service to vendor
 PRODUCT_VENDOR_MOVE_ENABLED := true
