@@ -17,7 +17,7 @@ LOCAL_PATH := $(call my-dir)
 ### android.hardware.wifi static library
 ###
 include $(CLEAR_VARS)
-LOCAL_MODULE := android.hardware.wifi@1.0-legacy_service-lib
+LOCAL_MODULE := android.hardware.wifi@1.0-msm8930_service-lib
 LOCAL_MODULE_RELATIVE_PATH := hw
 LOCAL_PROPRIETARY_MODULE := true
 LOCAL_CPPFLAGS := -Wall -Werror -Wextra
@@ -33,7 +33,7 @@ endif
 ifdef WIFI_HIDL_FEATURE_DISABLE_AP
 LOCAL_CPPFLAGS += -DWIFI_HIDL_FEATURE_DISABLE_AP
 endif
-ifdef WIFI_HIDL_FEATURE_DISABLE_AP_MAC_RANDOMIZATION
+ifndef WIFI_HIDL_FEATURE_DISABLE_AP_MAC_RANDOMIZATION
 LOCAL_CPPFLAGS += -DWIFI_HIDL_FEATURE_DISABLE_AP_MAC_RANDOMIZATION
 endif
 # Allow implicit fallthroughs in wifi_legacy_hal.cpp until they are fixed.
@@ -76,7 +76,7 @@ include $(BUILD_STATIC_LIBRARY)
 ### android.hardware.wifi daemon
 ###
 include $(CLEAR_VARS)
-LOCAL_MODULE := android.hardware.wifi@1.0-service.legacy
+LOCAL_MODULE := android.hardware.wifi@1.0-service.msm8930
 LOCAL_MODULE_RELATIVE_PATH := hw
 LOCAL_PROPRIETARY_MODULE := true
 LOCAL_CPPFLAGS := -Wall -Werror -Wextra
@@ -97,6 +97,6 @@ LOCAL_SHARED_LIBRARIES := \
     android.hardware.wifi@1.2 \
     android.hardware.wifi@1.3
 LOCAL_STATIC_LIBRARIES := \
-    android.hardware.wifi@1.0-legacy_service-lib
-LOCAL_INIT_RC := android.hardware.wifi@1.0-service.legacy.rc
+    android.hardware.wifi@1.0-msm8930_service-lib
+LOCAL_INIT_RC := android.hardware.wifi@1.0-service.msm8930.rc
 include $(BUILD_EXECUTABLE)
