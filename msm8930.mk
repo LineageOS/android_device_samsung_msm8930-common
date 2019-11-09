@@ -13,6 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+$(LOCAL_PATH) := device/samsung/msm8930-common
+
 # Always preopt extracted APKs to prevent extracting out of the APK
 # for gms modules.
 PRODUCT_ALWAYS_PREOPT_EXTRACTED_APK := true
@@ -150,7 +152,7 @@ PRODUCT_PACKAGES += \
     wpa_supplicant.conf
 
 # Common overlay
-DEVICE_PACKAGE_OVERLAYS += device/samsung/msm8930-common/overlay
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Common qcom
 $(call inherit-product, device/samsung/qcom-common/qcom-common.mk)
