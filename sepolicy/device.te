@@ -1,1 +1,2 @@
+type alarm_device, dev_type, mlstrustedobject;
 type efs_block_device, dev_type;
