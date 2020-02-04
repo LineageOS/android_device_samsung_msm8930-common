@@ -48,10 +48,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/_hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/_hals.conf
 
-# Camera configurations
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/external_camera_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/external_camera_config.xml
-
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-impl \
@@ -97,8 +93,8 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    android.hardware.camera.provider@2.4-impl \
-    camera.device@1.0-impl \
+    android.hardware.camera.provider@2.4-impl.msm8930 \
+    camera.device@1.0-impl.msm8930 \
     camera.msm8960
 
 # RenderScript
