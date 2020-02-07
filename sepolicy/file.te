@@ -6,3 +6,4 @@ type sysfs_keypad, fs_type, sysfs_type;
 type sysfs_mdnie, fs_type, sysfs_type;
 type sysfs_soc_id, fs_type, sysfs_type;
 type wifi_efs_file, file_type;
+type wifihal_socket, file_type, data_file_type;

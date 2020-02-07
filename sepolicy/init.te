@@ -6,8 +6,6 @@ allow init debugfs:dir mounton;
 allow init debugfs:file w_file_perms;
 allow init diag_device:chr_file unlink;
 allow init efs_file:dir mounton;
-allow init hal_wifi_hwservice:hwservice_manager add;
-allow init hidl_base_hwservice:hwservice_manager add;
 allow init labeledfs:filesystem associate;
 allow init proc_filesystems:file getattr;
 allow init proc_modules:file r_file_perms;
@@ -33,7 +31,6 @@ allow init system_file:file execmod;
 allow init vendor_file:file execute_no_trans;
 allow init vendor_toolbox_exec:file execute_no_trans;
 
-binder_call(init, hwservicemanager)
 binder_call(init, system_server)
 
 set_prop(init, vendor_wifi_prop)
