@@ -1,6 +1,7 @@
 type app_efs_file, file_type;
 type geomagneticd_data_file, file_type, data_file_type;
 type imei_efs_file, file_type;
+type sysfs_ir, fs_type, sysfs_type;
 type sysfs_keypad, fs_type, sysfs_type;
 type sysfs_mdnie, fs_type, sysfs_type;
 type sysfs_soc_id, fs_type, sysfs_type;
