@@ -147,6 +147,11 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     wpa_supplicant.conf
 
+# Dex preopt
+PRODUCT_DEXPREOPT_SPEED_APPS += \
+    SystemUI \
+    TrebuchetQuickStep
+
 # Common overlay
 DEVICE_PACKAGE_OVERLAYS += device/samsung/msm8930-common/overlay
 
