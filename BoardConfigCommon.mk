@@ -13,8 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-PLATFORM_PATH := device/samsung/msm8930-common
-
 # inherit from qcom-common
 -include device/samsung/qcom-common/BoardConfigCommon.mk
 

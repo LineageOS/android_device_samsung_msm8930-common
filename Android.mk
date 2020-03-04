@@ -20,14 +20,12 @@
 # to only building on ARM if they include assembly. Individual makefiles
 # are responsible for having their own logic, for fine-grained control.
 
-LOCAL_PATH := $(call my-dir)
-
 ifeq ($(BOARD_VENDOR),samsung)
 ifeq ($(TARGET_BOARD_PLATFORM),msm8960)
 ifneq ($(filter expressltexx loganreltexx lt02ltespr lt02ltetmo melius3gxx meliusltexx meliusltespr \
                 serrano3gxx serranodsdd serranodsub serranoltebmc serranoltexx \
                 serranoltespr serranolteusc wilcoxltexx,$(TARGET_DEVICE)),)
-include $(call all-subdir-makefiles,$(LOCAL_PATH))
+include $(call all-subdir-makefiles,$(PLATFORM_PATH))
 
 MODEM_IMAGES := \
     modem.b00 modem.b01 modem.b02 modem.b03 modem.b04 modem.b05 \
