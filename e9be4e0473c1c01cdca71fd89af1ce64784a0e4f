@@ -16,6 +16,24 @@
       "revId": "e9be4e0473c1c01cdca71fd89af1ce64784a0e4f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "839c54cb_c40396db",
+        "filename": "hidl/gnss/Gnss.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 12485
+      },
+      "writtenOn": "2020-05-19T13:50:38Z",
+      "side": 1,
+      "message": "Line 232 initializes info.svFlag to NONE.",
+      "parentUuid": "34004a24_7d6f5c38",
+      "revId": "e9be4e0473c1c01cdca71fd89af1ce64784a0e4f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
     }
   ]
 }
