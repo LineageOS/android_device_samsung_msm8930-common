@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "34004a24_7d6f5c38",
+        "filename": "hidl/gnss/Gnss.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 16208
+      },
+      "writtenOn": "2020-05-19T13:44:20Z",
+      "side": 1,
+      "message": "else if",
+      "revId": "e9be4e0473c1c01cdca71fd89af1ce64784a0e4f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
