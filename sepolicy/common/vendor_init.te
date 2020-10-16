@@ -1,5 +1,6 @@
 type_transition vendor_init system_data_file:file wifi_data_file;
 
+allow vendor_init bluetooth_data_file:file { getattr relabelfrom };
 allow vendor_init packages_list_file:file r_file_perms;
 allow vendor_init proc_security:file rw_file_perms;
 allow vendor_init radio_data_file:lnk_file create_file_perms;
