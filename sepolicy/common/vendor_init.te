@@ -8,3 +8,8 @@ allow vendor_init seapp_contexts_file:file r_file_perms;
 allow vendor_init unlabeled:{ dir file } { getattr relabelfrom };
 allow vendor_init wifi_data_file:dir rw_dir_perms;
 allow vendor_init wifi_data_file:file create_file_perms;
+allow vendor_init vendor_file:file entrypoint;
+allow vendor_init deviceidle_service:service_manager find;
+
+binder_call(vendor_init, servicemanager)
+binder_call(vendor_init, system_server)
