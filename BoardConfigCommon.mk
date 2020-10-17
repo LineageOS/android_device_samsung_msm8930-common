@@ -29,6 +29,9 @@ TARGET_CPU_VARIANT_RUNTIME := krait
 # Binder
 TARGET_USES_64_BIT_BINDER := true
 
+# Memfd
+TARGET_HAS_MEMFD_BACKPORT := true
+
 # HIDL
 DEVICE_MANIFEST_FILE := $(PLATFORM_PATH)/manifest.xml
 DEVICE_MATRIX_FILE := $(PLATFORM_PATH)/compatibility_matrix.xml
