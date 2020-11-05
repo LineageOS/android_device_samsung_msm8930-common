@@ -143,7 +143,7 @@ PRODUCT_PACKAGES += \
 
 # WiFi
 PRODUCT_PACKAGES += \
-    android.hardware.wifi@1.0-service.msm8930 \
+    android.hardware.wifi@1.0-service.legacy \
     hostapd \
     libwpa_client \
     wificond \
