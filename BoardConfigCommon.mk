@@ -70,9 +70,6 @@ USE_DEVICE_SPECIFIC_CAMERA := true
 TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS := 0x2000U | 0x02000000U
 TARGET_DISABLE_POSTRENDER_CLEANUP := true
 
-# Renderscript
-OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
-
 # Wifi driver
 BOARD_HAS_QCOM_WLAN              := true
 BOARD_WLAN_DEVICE                := qcwcn
