@@ -19,7 +19,6 @@ allow vendor_toolbox {
     efs_file
     persist_file
     app_efs_file
-    bluetooth_data_file
     bluetooth_efs_file
     drm_efs_file
     imei_efs_file
@@ -32,7 +31,6 @@ allow vendor_toolbox {
     efs_file
     persist_file
     app_efs_file
-    bluetooth_data_file
     bluetooth_efs_file
     drm_efs_file
     imei_efs_file
