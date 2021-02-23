@@ -35,6 +35,7 @@
 /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/reset_count                                        u:object_r:sysfs_thermal:s0
 /sys/devices/platform/mipi_samsung_oled.1281/lcd/panel/panel(/.*)?                                u:object_r:sysfs_graphics:s0
 /sys/devices/platform/msm_fb.525569/leds/lcd-backlight(/.*)?                                      u:object_r:sysfs_leds:s0
+/sys/devices/platform/msm_sdcc\.[0-9]/mmc_host/mmc[0-9]/mmc[0-9]:[0-9]+/pre_eol_info              u:object_r:sysfs_disk_pre_eol_info:s0
 /sys/devices/platform/msm_sdcc\.[0-9]/mmc_host/mmc[0-9]/mmc[0-9]:[0-9]+/rev                       u:object_r:sysfs_disk_rev:s0
 /sys/devices/platform/msm_sdcc\.[0-9]/mmc_host/mmc[0-9]/mmc[0-9]:[0-9]+/block/mmcblk[0-9]/stat    u:object_r:sysfs_disk_stat:s0
 /sys/devices/platform/msm_ssbi.0/pm8921-core/pm8921-charger/power_supply(/.*)?                    u:object_r:sysfs_batteryinfo:s0
